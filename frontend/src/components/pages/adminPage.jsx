@@ -17,10 +17,12 @@ const root = createRoot(container);
 
 root.render(
   <StrictMode>
-    
+    <Container>
+      <LoginAdmin/>
+    </Container>
     {/*
-      <Container>
-        <h1>Husky Film Festival Admin Portal</h1>
+    <Container>
+      <h1>Husky Film Festival Admin Portal</h1>
        
     </Container>  
     <Container>
