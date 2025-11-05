@@ -10,12 +10,12 @@ import AdminForm from '../adminForm';
 
 
 
-
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
   <StrictMode>
+    <Navbar/>
     <Container>
         <h1>Husky Film Festival Admin Portal</h1>
        
