@@ -1,0 +1,14 @@
+p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.cards-container {
+    display: flex;
+    gap: 20px;  /* Space between cards */
+    padding: 40px;
+    justify-content: center;  /* Centers the cards */
+    flex-wrap: wrap;  /* Allows cards to wrap to the next line on smaller screens */
+}
