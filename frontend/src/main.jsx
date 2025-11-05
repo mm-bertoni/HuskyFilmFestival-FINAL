@@ -9,6 +9,7 @@ import './index.css';
 import IndexPage from './assets/components/pages/IndexPage';
 import FilmSubmissionPage from './assets/components/pages/filmSubmissionPage';
 import TicketPage from './assets/components/pages/TicketPage';
+import TicketsAdminPage from './assets/components/pages/TicketsAdminPage'
 
 //import FilmForm from "./components/filmForm";
 
@@ -22,6 +23,7 @@ root.render(
         <Route path="/" element={<IndexPage />} />
         <Route path="/filmForm" element={<FilmSubmissionPage />} />
         <Route path="/tickets" element={<TicketPage />} />
+        <Route path="/ticketsAdmin" element={<TicketsAdminPage/>}/>
       </Routes>
     </BrowserRouter>
   </StrictMode>
