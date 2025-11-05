@@ -3,10 +3,12 @@ import Card from "../Homepage/Card";
 import "../styles/IndexPage.css";
 import ticketImage from "../../images/ticket.jpg";
 import filmReel from "../../images/filmReel.jpg";
+import Navbar from "../Navbar";
 
 export default function IndexPage() {
   return (
     <>
+      <Navbar />
       <Banner />
       <div>
         <p>

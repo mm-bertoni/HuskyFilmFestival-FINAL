@@ -10,6 +10,7 @@ body {
   margin: 0;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .navbar a {
@@ -24,6 +25,7 @@ ul {
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: center;
 }
 
 ul li a:hover {
@@ -33,6 +35,43 @@ ul li a:hover {
 }
 
 .logo img {
-  max-width: 5%;
+  max-width: 50px;
   height: auto;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  margin: 4px 0;
+  background-color: white;
+  transition: 0.4s;
+}
+
+
+@media (max-width: 768px) {
+  ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: gray;
+    padding: 10px 0;
+    align-items: flex-start;
+  }
+
+  ul.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
 }
