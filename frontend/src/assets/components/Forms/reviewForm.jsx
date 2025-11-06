@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {useState} from "react";
 
-export default function ReviewForm({director, title, genre, screener, status}){
+export default function ReviewForm({director, title, genre, screener}){
     const [selected, setSelected] = useState("Not Reviewed"); // Default is hasnt been reviewed.
     // Fix this 
     const handleSelection = (event) =>{
@@ -20,11 +20,11 @@ export default function ReviewForm({director, title, genre, screener, status}){
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                director:director,
-                title:title,
-                genre:genre,
-                screener:screener,
-                status:status
+                director,
+                title,
+                genre,
+                screener,
+                status:selected
             })
             
         });
