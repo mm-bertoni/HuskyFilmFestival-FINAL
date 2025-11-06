@@ -4,10 +4,12 @@
 Margaret Bertoni, Utkarsh Dev
 
 ## Class Link
-
+[WebDev Class](https://johnguerra.co/classes/webDevelopment_online_fall_2025/)
 
 ## Project Objective
+HuskyFilmFestival is a full-stack web application that allows filmmakers to submit their films for screening consideration and enables users to purchase tickets for the festival. Built with React, Node.js, Express, and MongoDB, the platform provides a seamless experience for both creators and attendees.
 
+An admin dashboard allows authorized users to log in, review submissions, and manage customer purchases, including editing or deleting records as needed. The project showcases a complete integration of front-end and back-end technologies to create a dynamic, responsive, and secure event management platform.
 
 ## Screenshot
 
