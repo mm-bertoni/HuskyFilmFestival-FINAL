@@ -11,9 +11,19 @@ HuskyFilmFestival is a full-stack web application that allows filmmakers to subm
 
 An admin dashboard allows authorized users to log in, review submissions, and manage customer purchases, including editing or deleting records as needed. The project showcases a complete integration of front-end and back-end technologies to create a dynamic, responsive, and secure event management platform.
 
-## Screenshot
+## Screenshots
 
-<!-- Add a screenshot at the path above or update the path to point to your image. -->
+### Home Page
+![Home Page](frontend/src/assets/images/screenshots/home.png)
+
+### Ticket Form
+![Ticket Form](frontend/src/assets/images/screenshots/ticketForm.png)
+
+### Admin Login
+![Admin Login](frontend/src/assets/images/screenshots/adminLogin.png)
+
+### Admin Ticket Management
+![Admin Ticket Management](frontend/src/assets/images/screenshots/adminTicket.png)
 
 ## Tools used
 - React (frontend) 
