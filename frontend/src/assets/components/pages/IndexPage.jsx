@@ -1,4 +1,4 @@
-import Banner from "../Homepage/banner";
+import Banner from "../Homepage/Banner";
 import Card from "../Homepage/Card";
 import "../styles/IndexPage.css";
 import ticketImage from "../../images/ticket.jpg";
