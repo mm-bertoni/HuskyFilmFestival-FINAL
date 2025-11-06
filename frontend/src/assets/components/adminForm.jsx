@@ -3,11 +3,13 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {useState} from "react";
 
-export default function AdminForm(){
+export default function AdminForm({onAttempt}){
     const [login, setLogin] = useState({user:"", password:""});
     const onSubmit = (evt) => {
         evt.preventDefault();
         console.log("Log In Attempt: ", login);
+        // need to pass a set function here to transfer it to the parent
+        onAttempt({login});
     }
     return(
         <Container>
