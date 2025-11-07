@@ -4,10 +4,33 @@ import Form from 'react-bootstrap/Form';
 import {useState} from "react";
 
 export default function FilmForm(){
-    const [application, setApplication] = useState({director:"", title:"",genre:"",link:""});
-    const onSubmit = (evt) => {
+    const [application, setApplication] = useState({director:"", title:"",genre:"",screener:""});
+    const onSubmit = async (evt) => {
         evt.preventDefault();
         console.log("On Submit: ", application);
+        try {
+            const res = await fetch(`/api/films`,{
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    director: application.director,
+                    title: application.title,
+                    genre: application.genre,
+                    screener: application.screener
+                })
+            });
+            if(res.ok){
+                console.log("Data posted successfully");
+                // clear after submission
+                setApplication({director:"", title:"",genre:"",screener:""});
+            }
+        } catch (error){
+            console.error("Error submitting film:",error);
+        }
+        
+
     }
 
 
@@ -69,8 +92,8 @@ export default function FilmForm(){
                     <Form.Control 
                         type="text" 
                         placeholder="" 
-                        value={application.link}
-                        onChange = {(e) => setApplication({...application, link: e.target.value})}
+                        value={application.screener}
+                        onChange = {(e) => setApplication({...application, screener: e.target.value})}
                     />
                 </Form.Group>
                 

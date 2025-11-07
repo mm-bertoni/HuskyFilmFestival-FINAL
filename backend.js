@@ -7,6 +7,7 @@ import filmRouter from './server/routes/films.js';
 import filmCountRouter from './server/routes/countFilms.js';
 import deleteFilmRouter from './server/routes/deleteFilm.js';
 import updateFilmRouter from './server/routes/updateFilmStatus.js';
+import filmSubmitRouter from './server/routes/filmSubmit.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,6 +29,7 @@ app.use("/api/", filmRouter);
 app.use("/api/", filmCountRouter);
 app.use("/api/", updateFilmRouter);
 app.use("/api/", deleteFilmRouter);
+app.use("/api/", filmSubmitRouter);
 
 
 // Serve React static files with fallback to index.html
