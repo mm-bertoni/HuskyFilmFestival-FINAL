@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {useState} from "react";
+import '../styles/filmForm.css';
 
 export default function FilmForm(){
     const [application, setApplication] = useState({director:"", title:"",genre:"",screener:""});
@@ -40,7 +41,7 @@ export default function FilmForm(){
 
 
     return(
-        <Container>
+        <Container className="filmFormContainer">
             <Form onSubmit={onSubmit} className="submitFilmForm">
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Label className="text-white">Director's Name</Form.Label>
@@ -72,8 +73,8 @@ export default function FilmForm(){
                         value={application.genre}
                         onChange = {(e) => setApplication({...application, genre: e.target.value})}
                     />
-                    <Form.Text className="text-white">
-                        Please try to pick one from the following: Action, Drama, Romance, Comedy, Fantasy. If none of those fit, you may enter your own.
+                    <Form.Text className="formText"> {/* Added extra class for styling */}
+                        Please try to pick one from the following:  Action, Drama, Romance, Comedy, Fantasy. If none of those fit, you may enter your own.
                     </Form.Text>
                 </Form.Group>
 
@@ -89,7 +90,7 @@ export default function FilmForm(){
                 
 
       
-                <Button variant="primary" type="submit">
+                <Button className="submitButton" type="submit">
                     Submit
                 </Button>
             </Form>
