@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
+
 import IndexPage from "./assets/components/pages/IndexPage";
 import FilmSubmissionPage from "./assets/components/pages/filmSubmissionPage";
 import TicketPage from "./assets/components/pages/TicketPage";

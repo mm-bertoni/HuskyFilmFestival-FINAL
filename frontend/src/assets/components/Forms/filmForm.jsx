@@ -5,6 +5,7 @@ import {useState} from "react";
 
 export default function FilmForm(){
     const [application, setApplication] = useState({director:"", title:"",genre:"",screener:""});
+    // Controlling the submission behavior
     const onSubmit = async (evt) => {
         evt.preventDefault();
         console.log("On Submit: ", application);
@@ -40,7 +41,7 @@ export default function FilmForm(){
 
     return(
         <Container>
-            <Form onSubmit={onSubmit}>
+            <Form onSubmit={onSubmit} className="submitFilmForm">
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Label className="text-white">Director's Name</Form.Label>
                     <Form.Control 
@@ -61,20 +62,6 @@ export default function FilmForm(){
                      />
                 </Form.Group>
                 
-                {/**
-                 * <Form.Group className="mb-3" controlId="formBasicType">
-                    <Form.Label>Film Type</Form.Label>
-                    <Form.Control 
-                        type="text" 
-                        placeholder=""
-                        value={application.type}
-                        onChange = {(e) => setApplication({...application, title: e.target.value})}
-                    />
-                    <Form.Text className="text-muted">
-                        Options: Feature or Short
-                    </Form.Text>
-                </Form.Group>
-                 */}
                 
 
                 <Form.Group className="mb-3" controlId="formBasicGenre">
