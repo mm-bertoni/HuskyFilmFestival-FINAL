@@ -18,7 +18,7 @@ An admin dashboard allows authorized users to log in, review submissions, and ma
 ## Screenshots
 
 ### Home Page
-
+![Home Page](frontend/src/assets/images/screenshots/homePage.png)
 ### Film Submission Form
 ![Film Submission](frontend/src/assets/images/screenshots/filmSubmit.png)
 On the "Submit a Film" tab, submit your film for consideration.
@@ -27,12 +27,13 @@ On the "Submit a Film" tab, submit your film for consideration.
 On the "Official Selections" tab, see what films have been accepted.
 ### Ticket Form
 ![Ticket Form](frontend/src/assets/images/screenshots/ticketForm.png)
-
+Buy a ticket here.
 ### Ticket Admin Login
 ![Admin Login](frontend/src/assets/images/screenshots/adminLogin.png)
-
+Ticket admin login page.
 ### Admin Ticket Management
 ![Admin Ticket Management](frontend/src/assets/images/screenshots/adminTicket.png)
+Ticket admin can edit or delete ticket purchases here, and view total revenue.
 
 ## Instructions for Film Admin Mode
 1. Add \filmAdmin to the end of the homepage url.
