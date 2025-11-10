@@ -94,7 +94,7 @@ export default function TicketForm({ isOpen, onClose, editTicket, onUpdate }) {
 
   // The form content (reusable)
   const formContent = (
-    <Form onSubmit={onSubmit}>
+    <Form onSubmit={onSubmit} className="bg-dark">
       <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label className="text-white">Name</Form.Label>
         <Form.Control
@@ -140,17 +140,23 @@ export default function TicketForm({ isOpen, onClose, editTicket, onUpdate }) {
   );
 
   // If editing, show as modal
-  if (isOpen && editTicket) {
+  if (editTicket) {
+    if (!isOpen) return null;
+
     return (
       <Modal show={isOpen} onHide={onClose} centered>
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="bg-dark text-white">
           <Modal.Title>Edit Ticket</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="bg-dark">
           {formContent}
         </Modal.Body>
       </Modal>
     );
+  }
+
+  if (!isOpen) {
+    return null;
   }
 
   // Otherwise, show as regular form in container
