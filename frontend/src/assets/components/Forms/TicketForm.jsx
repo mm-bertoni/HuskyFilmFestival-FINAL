@@ -5,6 +5,14 @@ import Modal from "react-bootstrap/Modal";
 import { useState, useEffect } from "react";
 
 export default function TicketForm({ isOpen, onClose, editTicket, onUpdate }) {
+    console.log('TicketForm on TicketPage:', { 
+    isOpen, 
+    editTicket,
+    isOpenType: typeof isOpen,
+    isOpenValue: isOpen,
+    strictCheck: isOpen === false 
+  });
+
   const [ticketData, setTicketData] = useState({
     name: "",
     numTickets: 1,
@@ -94,7 +102,7 @@ export default function TicketForm({ isOpen, onClose, editTicket, onUpdate }) {
 
   // The form content (reusable)
   const formContent = (
-    <Form onSubmit={onSubmit} className="bg-dark">
+    <Form onSubmit={onSubmit}>
       <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label className="text-white">Name</Form.Label>
         <Form.Control
@@ -139,27 +147,24 @@ export default function TicketForm({ isOpen, onClose, editTicket, onUpdate }) {
     </Form>
   );
 
-  // If editing, show as modal
   if (editTicket) {
-    if (!isOpen) return null;
-
+    if (!isOpen) return null; 
+    
     return (
       <Modal show={isOpen} onHide={onClose} centered>
-        <Modal.Header closeButton className="bg-dark text-white">
-          <Modal.Title>Edit Ticket</Modal.Title>
+        <Modal.Header closeButton style={{ backgroundColor: 'rgb(44, 44, 44)', borderBottom: '1px solid #374151' }}>
+          <Modal.Title style={{ color: 'white' }}>Edit Ticket</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="bg-dark">
+        <Modal.Body style={{ backgroundColor: '#1f2937' }}>
           {formContent}
         </Modal.Body>
       </Modal>
     );
   }
 
-  if (!isOpen) {
-    return null;
-  }
-
-  // Otherwise, show as regular form in container
+if (isOpen === false && editTicket === null) {
+  return null;
+}
   return (
     <Container>
       {formContent}
