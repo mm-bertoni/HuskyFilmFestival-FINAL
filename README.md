@@ -6,13 +6,13 @@ Margaret Bertoni, Utkarsh Dev
 ## Live Website Link:
 [Husky Film Fest Website](https://huskyfilmfestival.onrender.com/)
 ## Database Size at Time of Submission:
-![MongoDB](frontend/src/assets/images/screenshots/database.png)
+[MongoDB](frontend/src/assets/images/screenshots/database.png)
 ## Video Link:
-![Video here](youtube.com/watch?v=KkN8o8clk_M&feature=youtu.be)
+[Video here](youtube.com/watch?v=KkN8o8clk_M&feature=youtu.be)
 ## Slides Link:
-![Slides here]()
+[Slides here](https://docs.google.com/presentation/d/1Ym8JNJRO0zBd7KrzLFvZcp5GKmMEthf_IH65ekwuc0Q/edit?usp=sharing)
 ## Design Doc:
-![Design Doc](DesignDoc.pdf)
+[Design Doc](DesignDoc.pdf)
 ## Class Link
 [WebDev Class](https://johnguerra.co/classes/webDevelopment_online_fall_2025/)
 
