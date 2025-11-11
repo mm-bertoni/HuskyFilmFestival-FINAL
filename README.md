@@ -7,7 +7,10 @@ Margaret Bertoni, Utkarsh Dev
 [Husky Film Fest Website](https://huskyfilmfestival.onrender.com/)
 ## Database Size at Time of Submission:
 ![MongoDB](frontend/src/assets/images/screenshots/database.png)
-
+## Video Link:
+![Video here](youtube.com/watch?v=KkN8o8clk_M&feature=youtu.be)
+## Slides Link:
+![Slides here]()
 ## Design Doc:
 ![Design Doc](DesignDoc.pdf)
 ## Class Link
