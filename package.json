@@ -1,42 +1,76 @@
 {
 
   "name": "huskyfilmfestival",
+
   "version": "1.0.0",
+
   "description": "",
+
   "main": "backend.js",
+
   "type": "module",
+
   "scripts": {
+
     "test": "echo \"Error: no test specified\" && exit 1",
-    
 
     "start": "node ./node_modules/nodemon/bin/nodemon.js backend.js"
+
   },
+
   "repository": {
+
     "type": "git",
+
     "url": "git+https://github.com/mm-bertoni/HuskyProductions_Margaret.git"
+
   },
+
   "keywords": [],
 
   "author": "Margaret Bertoni, Utkarsh Dev",
+
   "license": "MIT",
+
   "bugs": {
+
     "url": "https://github.com/mm-bertoni/HuskyProductions_Margaret/issues"
+
   },
+
   "homepage": "https://github.com/mm-bertoni/HuskyProductions_Margaret#readme",
 
   "dependencies": {
+
+    "bcrypt": "^6.0.0",
+
     "dotenv": "^17.2.3",
+
     "express": "^5.1.0",
+
     "mongodb": "^6.20.0",
+
     "nodemon": "^3.1.10"
+
   },
+
   "devDependencies": {
+
     "@eslint/js": "^9.39.1",
+
     "eslint": "^9.39.1",
+
     "eslint-config-prettier": "^10.1.8",
+
     "eslint-plugin-jest": "^29.0.1",
+
     "globals": "^16.5.0",
+
     "jest": "^30.2.0",
+
     "prettier": "^3.6.2"
+
   }
+
 }
+

@@ -3,7 +3,6 @@ import { useNavigate, Link } from "react-router-dom";
 import "../styles/AdminLogin.css";
 import IndexPage from "./IndexPage";
 
-
 const AdminLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -82,7 +81,7 @@ const AdminLogin = () => {
           style={{
             width: "100%",
             padding: "10px",
-            backgroundColor: "#007bff",
+            backgroundColor: "#d64622",
             color: "white",
             border: "none",
             borderRadius: "4px",
@@ -93,7 +92,15 @@ const AdminLogin = () => {
         </button>
       </form>
       <Link to="/">
-        <button variant="primary">Go to home</button>
+        <button
+          variant="primary"
+          style={{ 
+            backgroundColor: "#d64622", 
+            color: "white",
+            borderRadius: "4px" }}
+        >
+          Go to home
+        </button>
       </Link>
     </div>
   );

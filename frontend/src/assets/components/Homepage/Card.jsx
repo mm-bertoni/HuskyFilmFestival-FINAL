@@ -9,7 +9,7 @@ function Card({ title, image, link }) {
       <BootstrapCard.Body>
         <BootstrapCard.Title>{title}</BootstrapCard.Title>
         <Link to={link}>
-          <Button variant="primary">Click Here</Button>
+          <Button variant="primary" style={{backgroundColor: "#d64622", borderColor: "#d64622"}}>Click Here</Button>
         </Link>
       </BootstrapCard.Body>
     </BootstrapCard>
