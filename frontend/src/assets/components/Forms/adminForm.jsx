@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {useState} from "react";
+import '../styles/adminForm.css';
 
 export default function AdminForm({onAttempt}){
     const [login, setLogin] = useState({user:"", password:""});
@@ -12,7 +13,7 @@ export default function AdminForm({onAttempt}){
         onAttempt({login});
     }
     return(
-        <Container>
+        <Container className="filmFormContainer">
             <Form onSubmit={onSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicUser">
                     <Form.Label>Username</Form.Label>
@@ -34,7 +35,7 @@ export default function AdminForm({onAttempt}){
                      />
                 </Form.Group>
       
-                <Button variant="primary" type="submit">
+                <Button className="submitButton" type="submit">
                     Log In
                 </Button>
             </Form>

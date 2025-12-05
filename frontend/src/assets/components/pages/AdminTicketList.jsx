@@ -93,7 +93,7 @@ export default function AdminTicketList() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <RefreshCw className="w-8 h-8 animate-spin text-blue-600 mx-auto mb-2" />
           <p className="text-gray-600">Loading tickets...</p>
@@ -104,7 +104,7 @@ export default function AdminTicketList() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+      <div className="min-h-screen flex items-center justify-center p-4">
         <div className="bg-red-50 border border-red-200 rounded-lg p-6 max-w-md">
           <AlertCircle className="w-8 h-8 text-red-600 mx-auto mb-3" />
           <h3 className="text-red-800 font-semibold text-center mb-2">
@@ -133,10 +133,10 @@ export default function AdminTicketList() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
+    <div className="min-h-screen py-8 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+        <div className="rounded-lg shadow-sm p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h1 className="text-3xl font-bold text-gray-900">
@@ -188,10 +188,10 @@ export default function AdminTicketList() {
             <p className="text-gray-500 text-lg">No tickets found</p>
           </div>
         ) : (
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+          <div className="rounded-lg shadow-sm overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-gray-50 border-b border-gray-200">
+                <thead className=" border-b border-gray-200">
                   <tr>
                     <th className="text-left py-8 px-6 text-sm font-semibold text-gray-700">
                       Name
@@ -211,7 +211,7 @@ export default function AdminTicketList() {
                   {tickets.map((ticket) => (
                     <tr
                       key={ticket._id}
-                      className="hover:bg-gray-50 transition"
+                      className="hover: transition"
                     >
                       <td className="py-8 px-6 text-sm text-gray-900 font-medium">
                         {ticket.name || "N/A"}

@@ -7,9 +7,14 @@ router.use(express.urlencoded({extended: true}));
 
 // Looks for post requests to delete something
 router.post("/deleteFilm", (req,res)=>{
-    FilmsDB.deleteFilm(req.body.director, req.body.title, req.body.genre, req.body.screener);
-    console.log("Deleted Film:", req.body.title);
-
+    try{
+        FilmsDB.deleteFilm(req.body.director, req.body.title,req.body.genre, req.body.screener);
+        console.log("Deleted Film:" ,req.body.title);
+        res.json({success: true});  // Send response
+    } catch (error){
+        console.error("Error deleting film:", error);
+        res.status(500).json({ error: "Failed to delete film" });
+    }
 });
 
 export default router; 

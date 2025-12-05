@@ -1,4 +1,5 @@
 import Container from "react-bootstrap/esm/Container";
+
 import {useState} from 'react';
 
 import AdminForm from "../Forms/adminForm";
@@ -21,6 +22,7 @@ export default function LoginAdmin(){
             
         } else {
             console.log("Invalid Log In. You are not logged in.")
+
             
         }
 
@@ -36,6 +38,7 @@ export default function LoginAdmin(){
                     <AdminForm
                         onAttempt={handleLogin}
                     />
+            
                 </Container>
             </>
         );

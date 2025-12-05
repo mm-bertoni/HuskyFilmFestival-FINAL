@@ -5,6 +5,14 @@ import Modal from "react-bootstrap/Modal";
 import { useState, useEffect } from "react";
 
 export default function TicketForm({ isOpen, onClose, editTicket, onUpdate }) {
+    console.log('TicketForm on TicketPage:', { 
+    isOpen, 
+    editTicket,
+    isOpenType: typeof isOpen,
+    isOpenValue: isOpen,
+    strictCheck: isOpen === false 
+  });
+
   const [ticketData, setTicketData] = useState({
     name: "",
     numTickets: 1,
@@ -96,7 +104,7 @@ export default function TicketForm({ isOpen, onClose, editTicket, onUpdate }) {
   const formContent = (
     <Form onSubmit={onSubmit}>
       <Form.Group className="mb-3" controlId="formBasicName">
-        <Form.Label>Name</Form.Label>
+        <Form.Label className="text-white">Name</Form.Label>
         <Form.Control
           type="text"
           placeholder="Enter your name"
@@ -107,16 +115,16 @@ export default function TicketForm({ isOpen, onClose, editTicket, onUpdate }) {
       </Form.Group>
 
       <Form.Group className="mb-3">
-        <Form.Label>Number of Tickets</Form.Label>
+        <Form.Label className="text-white">Number of Tickets</Form.Label>
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <Button variant="secondary" type="button" onClick={handleDecrease}>−</Button>
-          <span>{ticketData.numTickets}</span>
+          <span className="text-white">{ticketData.numTickets}</span>
           <Button variant="secondary" type="button" onClick={handleIncrease}>+</Button>
         </div>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicTotal">
-        <Form.Label>Total Cost</Form.Label>
+        <Form.Label className="text-white">Total Cost</Form.Label>
         <Form.Control type="text" value={`$${ticketData.totalCost}`} readOnly />
       </Form.Group>
 
@@ -139,21 +147,24 @@ export default function TicketForm({ isOpen, onClose, editTicket, onUpdate }) {
     </Form>
   );
 
-  // If editing, show as modal
-  if (isOpen && editTicket) {
+  if (editTicket) {
+    if (!isOpen) return null; 
+    
     return (
       <Modal show={isOpen} onHide={onClose} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Edit Ticket</Modal.Title>
+        <Modal.Header closeButton style={{ backgroundColor: 'rgb(44, 44, 44)', borderBottom: '1px solid #374151' }}>
+          <Modal.Title style={{ color: 'white' }}>Edit Ticket</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body style={{ backgroundColor: '#1f2937' }}>
           {formContent}
         </Modal.Body>
       </Modal>
     );
   }
 
-  // Otherwise, show as regular form in container
+if (isOpen === false && editTicket === null) {
+  return null;
+}
   return (
     <Container>
       {formContent}

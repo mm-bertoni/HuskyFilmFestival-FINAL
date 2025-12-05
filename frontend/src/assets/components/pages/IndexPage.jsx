@@ -1,4 +1,4 @@
-import Banner from "../Homepage/banner";
+import Banner from "../Homepage/Banner";
 import Card from "../Homepage/Card";
 import "../styles/IndexPage.css";
 import ticketImage from "../../images/ticket.jpg";
@@ -12,7 +12,7 @@ export default function IndexPage() {
       <Banner />
       <div>
         <p>
-          Whether its a short film, a long one, animated or live action, we
+          Whether its a short or feature film, animated or live action, we
           welcome all indie filmmakers to submit their work for screening at the
           Husky Film Festival!
         </p>

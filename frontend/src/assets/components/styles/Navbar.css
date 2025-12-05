@@ -3,7 +3,7 @@ body {
 }
 
 .navbar {
-  background-color: gray;
+  background-color: rgb(58, 58, 58);
   padding: 10px 20px;
   margin: 0;
   display: flex;
@@ -29,7 +29,7 @@ ul {
 }
 
 ul li a:hover {
-  background-color: #3b3b3b;
+  background-color: #4f4f4f;
   padding: 5px 5px;
   border-radius: 5px;
 }
@@ -74,4 +74,9 @@ ul li a:hover {
   .menu-icon {
     display: flex;
   }
+}
+
+/*MB Added link css to make the navbar easier to read*/
+.navbarLink {
+  font-size:20px; 
 }

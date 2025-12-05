@@ -1,9 +1,12 @@
 
 import {useState, useEffect} from "react";
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-import Film from './filmToReview';
+import Film from './acceptedFilm';
 
+// TODO : CHANGE TO ONLY ACCEPTED STUFF
 export default function FilmReviewList(){
     const [films, setFilms] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -12,7 +15,7 @@ export default function FilmReviewList(){
         //console.log("reloadFilms triggered");
         // Testing
         setLoading(true);
-        const res = await fetch(`/api/films`);
+        const res = await fetch(`/api/acceptedFilms`);
         console.log("What is res gettting", res);
         if(!res.ok){
             console.error("Failed to fetch films", res.status);
@@ -37,16 +40,11 @@ export default function FilmReviewList(){
     
     function renderFilm(film){
         return (
-            <Film 
+            <Film
             key = {film._id}
             director={film.director}
             title={film.title}
             genre={film.genre}
-            screener={film.screener}
-            status={film.status}
-            onReload={reloadFilms}
-            // Test
-           
             />
         );
 
@@ -66,13 +64,19 @@ export default function FilmReviewList(){
     if(!films || films.length === 0){
         return(
             <Container>
-                <div>No unreviewed films found</div>
+                <div>Check Back Later For Accepted Films</div>
             </Container>
         )
     }
     return(
         <Container>
-            {films.map(renderFilm)}
+            <Row>
+                
+                    {films.map(renderFilm)}
+               
+                
+            </Row>
+            
         </Container>
     );
 }

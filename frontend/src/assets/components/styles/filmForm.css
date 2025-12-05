@@ -1,0 +1,20 @@
+.filmFormContainer {
+    margin: 5% auto; 
+}
+
+.formText {
+    font-size: large; 
+    color: white; 
+    
+}
+
+.text-white {
+    font-size: xx-large;
+}
+
+.submitButton {
+    background-color: #C8A978;
+    border-color: black; 
+    font-size: xx-large;
+    border: 5% auto;
+}

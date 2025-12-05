@@ -1,35 +1,46 @@
 import Container from 'react-bootstrap/Container';
 import ReviewForm from '../Forms/reviewForm';
+import '../styles/filmToReview.css'
 
-export default function FilmToReview({ director, title, genre, screener, status}){
+export default function FilmToReview({director, title, genre, screener, status, onReload}){
     return(
         <>
-            <Container>
+            <Container className="filmBlock">
                 <div>
                     <h2>Film: {title}</h2>
                 </div>
                 <div>
                     <span>
-                        <h3>Director:</h3> 
-                        <p>{director}</p>
+                        <h2>Director:</h2> 
+                        <p className="filmInfo">{director}</p>
                     </span>
                     <span>
-                        <h3>Genre:</h3> 
-                        <p>{genre}</p>
+                        <h2>Genre:</h2> 
+                        <p className="filmInfo">{genre}</p>
                     </span>
     
                     <span>
-                        <h3>Screener Website:</h3> 
-                        <p>{screener}</p>
+                        <h2>Screener Website:</h2> 
+                        <a href={screener} className="filmInfo">{screener}</a>
                     </span>
                     <span>
-                        <h3>Selection Status:</h3> 
-                        <p>{status}</p>
+                        <h2>Selection Status:</h2> 
+                        <p className="statusText">{status}</p>
                     </span>
                 </div>
-                <div>
-                    <ReviewForm/>
-                </div>
+                
+           
+            
+             
+                <ReviewForm
+                director={director}
+                title={title}
+                genre={genre}
+                screener={screener}
+                status={status}
+                onReload={onReload}
+                />
+               
             </Container>
         </>
 

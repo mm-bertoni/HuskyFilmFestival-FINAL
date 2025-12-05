@@ -20,13 +20,17 @@ export default function Navbar() {
 
       <ul className={isOpen ? "active" : ""}>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" className="navbarLink">Home</Link>
         </li>
         <li>
-          <Link to="/filmForm">Register Film</Link>
+          <Link to="/filmForm" className="navbarLink">Submit a Film</Link>
         </li>
         <li>
-          <Link to="/tickets">Buy tickets</Link>
+          <Link to="/acceptedFilms" className="navbarLink">Official Selections</Link>
+        </li>
+
+        <li>
+          <Link to="/tickets" className="navbarLink">Buy Tickets</Link>
         </li>
       </ul>
     </nav>
