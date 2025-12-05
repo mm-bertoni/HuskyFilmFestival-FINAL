@@ -12,6 +12,7 @@ import AdminLogin from "./assets/components/pages/AdminLogin";
 import Footer from "./assets/components/Footer";
 import FilmAdminPage from "./assets/components/pages/filmAdminPage";
 import AcceptedFilmPage from "./assets/components/pages/acceptedFilmPage";
+import FilmLoggedIn from "./assets/components/pages/filmLoggedIn";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -27,6 +28,7 @@ root.render(
         <Route path="/tickets" element={<TicketPage />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/adminTickets" element={<AdminTicketList />} />
+        <Route path="/loggedInAdmin" element ={<FilmLoggedIn/>}/>
       </Routes>
     </BrowserRouter>
     <Footer />
