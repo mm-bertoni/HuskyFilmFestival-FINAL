@@ -4,7 +4,7 @@
 Margaret Bertoni, Utkarsh Dev
 
 ## Live Website Link:
-[Husky Film Fest Website](https://huskyfilmfestival.onrender.com/)
+<!--[Husky Film Fest Website](https://huskyfilmfestival.onrender.com/)*/-->
 ## Database Size at Time of Submission:
 [MongoDB](frontend/src/assets/images/screenshots/database.png)
 ## Video Link:
