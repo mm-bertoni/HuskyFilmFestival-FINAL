@@ -3,7 +3,7 @@ body {
 }
 
 .navbar {
-  background-color: rgb(58, 58, 58);
+  background-color: rgb(44, 44, 44);
   padding: 10px 20px;
   margin: 0;
   display: flex;
@@ -11,6 +11,7 @@ body {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar a {
@@ -29,7 +30,7 @@ ul {
 }
 
 ul li a:hover {
-  background-color: #4f4f4f;
+  background-color: #363636;
   padding: 5px 5px;
   border-radius: 5px;
 }

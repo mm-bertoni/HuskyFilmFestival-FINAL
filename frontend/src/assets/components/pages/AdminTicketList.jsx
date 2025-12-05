@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Trash2, RefreshCw, AlertCircle } from "lucide-react";
+import { Trash2, RefreshCw, AlertCircle, ArrowUpDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import TicketForm from "../Forms/TicketForm";
 
@@ -10,6 +10,7 @@ export default function AdminTicketList() {
   const [deleting, setDeleting] = useState(null);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [editingTicket, setEditingTicket] = useState(null);
+  const [isReversed, setIsReversed] = useState(false);
   const navigate = useNavigate();
 
   // check authentication
@@ -83,6 +84,12 @@ export default function AdminTicketList() {
     );
   };
 
+  // Handle reversing list
+  const handleToggleOrder = () => {
+    setTickets([...tickets].reverse());
+    setIsReversed(!isReversed);
+  };
+
   useEffect(() => {
     fetchTickets();
   }, []);
@@ -147,6 +154,14 @@ export default function AdminTicketList() {
               </p>
             </div>
             <button
+              onClick={handleToggleOrder}
+              className="flex items-center gap-2 bg-blue-600 text-black py-2 px-4 rounded-lg hover:bg-blue-700 transition"
+              title={isReversed ? "Show oldest first" : "Show newest first"}
+            >
+              <ArrowUpDown className="w-4 h-4" />
+              Reverse Order
+            </button>
+            <button
               onClick={fetchTickets}
               className="flex items-center gap-2 bg-blue-600 text-black py-2 px-4 rounded-lg hover:bg-blue-700 transition"
             >
@@ -209,10 +224,7 @@ export default function AdminTicketList() {
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {tickets.map((ticket) => (
-                    <tr
-                      key={ticket._id}
-                      className="hover: transition"
-                    >
+                    <tr key={ticket._id} className="hover: transition">
                       <td className="py-8 px-6 text-sm text-gray-900 font-medium">
                         {ticket.name || "N/A"}
                       </td>

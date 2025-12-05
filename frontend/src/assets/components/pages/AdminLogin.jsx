@@ -1,40 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles/AdminLogin.css";
-import IndexPage from "./IndexPage";
-
 
 const AdminLogin = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-
-    try {
-      const response = await fetch("/api/auth/admin/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-      });
-
-      const data = await response.json();
-      console.log(data);
-      if (data.success) {
-        localStorage.setItem("adminLoggedIn", "true");
-        navigate("/adminTickets");
-      } else {
-        setError(data.message);
-      }
-    } catch (error) {
-      setError("Login failed. Please try again.");
-    }
-  };
+  const [isRegisterMode, setIsRegisterMode] = useState(false);
 
   return (
     <div
@@ -46,54 +15,106 @@ const AdminLogin = () => {
         borderRadius: "8px",
       }}
     >
-      <h2 style={{ textAlign: "center", color: "white" }}>Admin Login</h2>
-      <form onSubmit={handleSubmit}>
+      <h2 style={{ textAlign: "center", color: "white" }}>
+        {isRegisterMode ? "Admin Registration" : "Admin Login"}
+      </h2>
+      
+      <form 
+        method="POST" 
+        action={isRegisterMode ? "/api/authP/register" : "/api/authP/login"}
+      >
+        {isRegisterMode && (
+          <div style={{ marginBottom: "15px" }}>
+            <label
+              style={{ display: "block", marginBottom: "5px", color: "white" }}
+            >
+              Name:
+            </label>
+            <input
+              type="text"
+              name="name"
+              required
+              style={{ width: "100%", padding: "8px", boxSizing: "border-box" }}
+            />
+          </div>
+        )}
+        
         <div style={{ marginBottom: "15px" }}>
           <label
             style={{ display: "block", marginBottom: "5px", color: "white" }}
           >
-            Username:
+            Email:
           </label>
           <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            type="email"
+            name="email"
             required
             style={{ width: "100%", padding: "8px", boxSizing: "border-box" }}
           />
         </div>
+        
         <div style={{ marginBottom: "15px" }}>
-          <label style={{ display: "block", marginBottom: "5px" }}>
+          <label
+            style={{ display: "block", marginBottom: "5px", color: "white" }}
+          >
             Password:
           </label>
           <input
             type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            name="password"
             required
             style={{ width: "100%", padding: "8px", boxSizing: "border-box" }}
           />
         </div>
-        {error && (
-          <div style={{ color: "red", marginBottom: "10px" }}>{error}</div>
-        )}
+        
         <button
           type="submit"
           style={{
             width: "100%",
             padding: "10px",
-            backgroundColor: "#007bff",
+            backgroundColor: "#d64622",
+            color: "white",
+            border: "none",
+            borderRadius: "4px",
+            cursor: "pointer",
+            marginBottom: "10px"
+          }}
+        >
+          {isRegisterMode ? "Register" : "Login"}
+        </button>
+      </form>
+      
+      <button
+        type="button"
+        onClick={() => setIsRegisterMode(!isRegisterMode)}
+        style={{
+          width: "100%",
+          padding: "10px",
+          backgroundColor: "transparent",
+          color: "#d64622",
+          border: "2px solid #d64622",
+          borderRadius: "4px",
+          cursor: "pointer",
+          marginBottom: "10px"
+        }}
+      >
+        {isRegisterMode ? "Already have an account? Login" : "Need an account? Register"}
+      </button>
+      
+      <Link to="/">
+        <button
+          style={{
+            width: "100%",
+            padding: "10px",
+            backgroundColor: "#d64622",
             color: "white",
             border: "none",
             borderRadius: "4px",
             cursor: "pointer",
           }}
         >
-          Login
+          Go to home
         </button>
-      </form>
-      <Link to="/">
-        <button variant="primary">Go to home</button>
       </Link>
     </div>
   );
