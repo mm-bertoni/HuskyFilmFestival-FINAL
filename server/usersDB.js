@@ -9,9 +9,10 @@ function usersDB(){
     const DB_NAME = "userDatabase";
     const COLLECTION_NAME = "users";
 
-  const connect = () => {
+  const connect = async() => {
     // Connect with client
     const client = new MongoClient(connectionURI);
+    await client.connect();
     console.log("Connected to Client")
     const usersDB = client.db(DB_NAME).collection(COLLECTION_NAME);
     console.log("Connected with Mongo DB");
@@ -21,7 +22,7 @@ function usersDB(){
   // Get user to load
   me.getUser = async (query) => {
     // Connect to db
-    const {client, usersDB} = connect();
+    const {client, usersDB} = await connect();
     try {
       const data = await usersDB.find(query).toArray(); 
       //console.log("Got data : ", data);
@@ -40,7 +41,7 @@ function usersDB(){
       passwordHash: newPasswordHash,
     };
     // Connect
-    const {client, usersDB} = connect();
+    const {client, usersDB} = await connect();
     try {
       const result = await usersDB.insertOne(newEntry);
       return result; 
