@@ -117,9 +117,9 @@ export default function TicketForm({ isOpen, onClose, editTicket, onUpdate }) {
       <Form.Group className="mb-3">
         <Form.Label className="text-white">Number of Tickets</Form.Label>
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <Button variant="secondary" type="button" onClick={handleDecrease} style={{backgroundColor: "#d64622", borderColor: "#d64622"}}>−</Button>
+          <Button variant="secondary" type="button" onClick={handleDecrease} style={{backgroundColor: "#C8102E", borderColor: "#C8102E"}}>−</Button>
           <span className="text-white">{ticketData.numTickets}</span>
-          <Button variant="secondary" type="button" onClick={handleIncrease} style={{backgroundColor: "#d64622", borderColor: "#d64622"}}>+</Button>
+          <Button variant="secondary" type="button" onClick={handleIncrease} style={{backgroundColor: "#C8102E", borderColor: "#C8102E"}}>+</Button>
         </div>
       </Form.Group>
 
@@ -140,7 +140,7 @@ export default function TicketForm({ isOpen, onClose, editTicket, onUpdate }) {
         </div>
       ) : (
         // Create mode - show Purchase button only
-        <Button variant="primary" style={{backgroundColor: "#d64622", borderColor: "#d64622" , fontSize: "x-large"}} type="submit" disabled={Submitting}>
+        <Button variant="primary" style={{backgroundColor: "#C8102E", borderColor: "#C8102E" , fontSize: "x-large"}} type="submit" disabled={Submitting}>
           {Submitting ? 'Submitting...' : 'Purchase'}
         </Button>
       )}
