@@ -3,6 +3,9 @@ import { MongoClient } from "mongodb";
 function usersDB(){
     const me = {};
     const connectionURI = process.env.ATLAS_URI;
+    // ADD THESE DEBUG LOGS
+    console.log("ATLAS_URI exists:", !!connectionURI);
+    console.log("ATLAS_URI starts with:", connectionURI?.substring(0, 20));
     //console.log("Connection: ", connectionURI);
     //const MONGODB_URI = process.env.MONGODB_URI;
     const DB_NAME = "userDatabase";
@@ -46,6 +49,7 @@ function usersDB(){
       return result; 
     } catch (error){
       console.error("Error adding new submission", error);
+      throw error;
     } finally {
       await client.close();
     }
