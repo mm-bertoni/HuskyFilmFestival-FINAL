@@ -2,7 +2,7 @@ import express from "express";
 import bcrypt from "bcrypt";
 
 import { isAuthenticated } from "../../middleware/auth.js";
-import { findUserByUsername, createUser } from "../../models/users.js";
+import { findUserByUsername, createUser } from "../../models/usersM.js";
 import passport from "../../config/passportM.js"
 
 const router = express.Router();
