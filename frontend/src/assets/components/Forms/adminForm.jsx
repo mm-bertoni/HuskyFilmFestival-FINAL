@@ -6,65 +6,65 @@ import '../styles/adminForm.css';
 
 export default function AdminForm(){
     const [login, setLogin] = useState({username:"", password:""});
-  /*   const onSubmit = async (evt) => {
+    
+    const onSubmit = async (evt) => {
         evt.preventDefault();
         console.log("Log In Attempt: ", login);
-        // need to pass a set function here to transfer it to the parent
-       // NEED
-       // POST ACTION HERE
-       try {
-        await fetch("https://huskyfilmfestival-final.onrender.com/loginUser", {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username: login.username,
-        password: login.password
-      })
-        }); 
-        
+        try {
+            await fetch("https://huskyfilmfestival-final.onrender.com/loginUser", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: login.username,
+                    password: login.password
+                })
+            }); 
+        } catch (error){
+            console.error("Error in sending POST with user info:", error)
+        }
+    }
     
-       } catch (error){
-        console.error("Error in sending POST with user info:", error)
-       }
-    } */
-    const onRegister = async (evt) =>{
+    const onRegister = async (evt) => {
         evt.preventDefault();
         console.log("Register Attempt: ", login);
-        // need to pass a set function here to transfer it to the parent
-       // NEED
-       // POST ACTION HERE
-       try {
-        await fetch("https://huskyfilmfestival-final.onrender.com/registerUser", {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username: login.username,
-        password: login.password
-      })
-        }); 
-        
-    
-       } catch (error){
-        console.error("Error in sending POST with user info:", error)
-       }
+        try {
+            const response = await fetch("https://huskyfilmfestival-final.onrender.com/registerUser", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: login.username,
+                    password: login.password
+                })
+            });
+            
+            const data = await response.json();
+            console.log("Register response:", response.status, data);
+            
+            if (response.ok) {
+                alert("Registration successful!");
+            } else {
+                alert("Registration failed: " + (data.message || "Unknown error"));
+            }
+        } catch (error){
+            console.error("Error in sending POST with user info:", error);
+            alert("Network error during registration");
+        }
     }
 
     return(
         <Container className="filmFormContainer">
-            <Form 
-                method="POST"
-                action="https://huskyfilmfestival-final.onrender.com/loginUser">
+            <Form onSubmit={onSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicUser">
                     <Form.Label>Username</Form.Label>
                     <Form.Control 
                         type="text" 
                         placeholder="" 
-                        value = {login.user}
-                        onChange = {(e) => setLogin({...login, username: e.target.value})}
+                        value={login.username}
+                        onChange={(e) => setLogin({...login, username: e.target.value})}
                     />
                 </Form.Group>
 
@@ -74,14 +74,14 @@ export default function AdminForm(){
                         type="password" 
                         placeholder=""
                         value={login.password}
-                        onChange = {(e) => setLogin({...login, password: e.target.value})}
+                        onChange={(e) => setLogin({...login, password: e.target.value})}
                      />
                 </Form.Group>
+                <Button className="submitButton" type="button" onClick={onRegister}>
+                    Register
+                </Button>
                 <Button className="submitButton" type="submit">
                     Log In
-                </Button>
-                <Button className="submitButton" type="login" onClick={onRegister}>
-                    Register
                 </Button>
             </Form>
         </Container>
