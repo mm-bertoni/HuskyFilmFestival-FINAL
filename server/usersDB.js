@@ -13,12 +13,12 @@ function usersDB(){
     // Connect with client
     const client = new MongoClient(connectionURI);
     console.log("Connected to Client")
-    const films = client.db(DB_NAME).collection(COLLECTION_NAME);
+    const usersDB = client.db(DB_NAME).collection(COLLECTION_NAME);
     console.log("Connected with Mongo DB");
-    return { client, films };
+    return { client, usersDB };
   };
 
-  // Get films to load
+  // Get user to load
   me.getUser = async (query) => {
     // Connect to db
     const {client, usersDB} = connect();
@@ -33,7 +33,7 @@ function usersDB(){
 
 
 
-  // Add new Film
+  // Add new User
   me.addUser = async (newUsername, newPasswordHash) => {
     const newEntry = {
       username: newUsername,
