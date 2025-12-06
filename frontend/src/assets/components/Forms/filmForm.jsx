@@ -97,7 +97,7 @@ export default function FilmForm() {
           />
         </Form.Group>
 
-        <Button className="submitButton" type="submit" style={{backgroundColor: "#d64622", borderColor: "#d64622"}}>
+        <Button className="submitButton" type="submit" style={{backgroundColor: "#C8102E", borderColor: "#C8102E"}}>
           Submit
         </Button>
       </Form>
