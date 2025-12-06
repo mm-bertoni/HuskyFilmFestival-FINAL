@@ -6,7 +6,7 @@ import '../styles/adminForm.css';
 
 export default function AdminForm(){
     const [login, setLogin] = useState({username:"", password:""});
-    const onSubmit = async (evt) => {
+  /*   const onSubmit = async (evt) => {
         evt.preventDefault();
         console.log("Log In Attempt: ", login);
         // need to pass a set function here to transfer it to the parent
@@ -28,7 +28,7 @@ export default function AdminForm(){
        } catch (error){
         console.error("Error in sending POST with user info:", error)
        }
-    }
+    } */
     const onRegister = async (evt) =>{
         evt.preventDefault();
         console.log("Register Attempt: ", login);
@@ -55,7 +55,9 @@ export default function AdminForm(){
 
     return(
         <Container className="filmFormContainer">
-            <Form onSubmit={onSubmit}>
+            <Form 
+                method="POST"
+                action="https://huskyfilmfestival-final.onrender.com/loginUser">
                 <Form.Group className="mb-3" controlId="formBasicUser">
                     <Form.Label>Username</Form.Label>
                     <Form.Control 
@@ -75,10 +77,10 @@ export default function AdminForm(){
                         onChange = {(e) => setLogin({...login, password: e.target.value})}
                      />
                 </Form.Group>
-                <Button className="submitButton" type="register">
+                <Button className="submitButton" type="submit">
                     Log In
                 </Button>
-                <Button className="submitButton" type="submit" onClick={onRegister}>
+                <Button className="submitButton" type="login" onClick={onRegister}>
                     Register
                 </Button>
             </Form>
