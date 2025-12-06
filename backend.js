@@ -11,6 +11,7 @@ import deleteFilmRouter from "./server/routes/deleteFilm.js";
 import updateFilmRouter from "./server/routes/updateFilmStatus.js";
 import filmSubmitRouter from "./server/routes/filmSubmit.js";
 import authPRouter from "./server/routes/AuthP.js";
+import authMargaret from "./server/routes/AuthM.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -46,6 +47,8 @@ app.use(passport.session());
 app.use("/api/tickets", ticketsRouter);
 app.use("/api/auth", authRoutes);
 app.use("/api/authP", authPRouter);
+// Attempting to add my Auth route
+app.use(authMargaret);
 
 /* Film Routes */
 app.use("/api/", filmRouter);
@@ -53,6 +56,7 @@ app.use("/api/", filmCountRouter);
 app.use("/api/", updateFilmRouter);
 app.use("/api/", deleteFilmRouter);
 app.use("/api/", filmSubmitRouter);
+
 
 // Serve React static files with fallback to index.html
 // TROUBLESHOOTING: Removing leading ../
