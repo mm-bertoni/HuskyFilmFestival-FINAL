@@ -7,22 +7,31 @@ import '../styles/adminForm.css';
 export default function AdminForm(){
     const [login, setLogin] = useState({username:"", password:""});
     
-    const onSubmit = async (evt) => {
+    const onLogin = async (evt) => {
         evt.preventDefault();
         console.log("Log In Attempt: ", login);
         try {
-            await fetch("https://huskyfilmfestival-final.onrender.com/loginUser", {
+            const response = await fetch("/loginUser", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
+                credentials: 'include',
                 body: JSON.stringify({
                     username: login.username,
                     password: login.password
                 })
-            }); 
+            });
+            
+            if (response.redirected) {
+                window.location.href = response.url;
+            } else {
+                const data = await response.json();
+                console.log("Login response:", data);
+                alert("Login failed: " + (data.message || "Unknown error"));
+            }
         } catch (error){
-            console.error("Error in sending POST with user info:", error)
+            console.error("Error in sending POST with user info:", error);
         }
     }
     
@@ -30,7 +39,7 @@ export default function AdminForm(){
         evt.preventDefault();
         console.log("Register Attempt: ", login);
         try {
-            const response = await fetch("https://huskyfilmfestival-final.onrender.com/registerUser", {
+            const response = await fetch("/registerUser", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -45,7 +54,7 @@ export default function AdminForm(){
             console.log("Register response:", response.status, data);
             
             if (response.ok) {
-                alert("Registration successful!");
+                alert("Registration successful! Please log in.");
             } else {
                 alert("Registration failed: " + (data.message || "Unknown error"));
             }
@@ -57,7 +66,7 @@ export default function AdminForm(){
 
     return(
         <Container className="filmFormContainer">
-            <Form onSubmit={onSubmit}>
+            <Form onSubmit={onLogin}>
                 <Form.Group className="mb-3" controlId="formBasicUser">
                     <Form.Label>Username</Form.Label>
                     <Form.Control 
