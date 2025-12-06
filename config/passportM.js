@@ -1,7 +1,7 @@
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import bcrypt from "bcrypt";
-import { findUserByUsername, findUser } from "../models/usersM.js";
+import { findUserByUsername, findUserById} from "../models/usersM.js";
 
 const strategy = new LocalStrategy(
     {
