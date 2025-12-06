@@ -72,7 +72,7 @@ const AdminLogin = () => {
           style={{
             width: "100%",
             padding: "10px",
-            backgroundColor: "#d64622",
+            backgroundColor: "#C8102E",
             color: "white",
             border: "none",
             borderRadius: "4px",
@@ -91,8 +91,8 @@ const AdminLogin = () => {
           width: "100%",
           padding: "10px",
           backgroundColor: "transparent",
-          color: "#d64622",
-          border: "2px solid #d64622",
+          color: "#C8102E",
+          border: "2px solid #C8102E",
           borderRadius: "4px",
           cursor: "pointer",
           marginBottom: "10px"
@@ -106,7 +106,7 @@ const AdminLogin = () => {
           style={{
             width: "100%",
             padding: "10px",
-            backgroundColor: "#d64622",
+            backgroundColor: "#C8102E",
             color: "white",
             border: "none",
             borderRadius: "4px",

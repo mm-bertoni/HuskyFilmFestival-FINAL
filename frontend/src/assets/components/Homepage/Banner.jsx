@@ -1,5 +1,5 @@
 import "../styles/Banner.css";
-import logo from "../../images/logo.png";
+import logo from "../../images/newLogo.png";
 
 export default function Banner() {
   return (
