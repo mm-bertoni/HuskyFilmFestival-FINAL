@@ -5,7 +5,7 @@ import {useState} from "react";
 import '../styles/adminForm.css';
 
 export default function AdminForm(){
-    const [login, setLogin] = useState({user:"", password:""});
+    const [login, setLogin] = useState({username:"", password:""});
     const onSubmit = async (evt) => {
         evt.preventDefault();
         console.log("Log In Attempt: ", login);
@@ -62,7 +62,7 @@ export default function AdminForm(){
                         type="text" 
                         placeholder="" 
                         value = {login.user}
-                        onChange = {(e) => setLogin({...login, user: e.target.value})}
+                        onChange = {(e) => setLogin({...login, username: e.target.value})}
                     />
                 </Form.Group>
 
@@ -76,10 +76,10 @@ export default function AdminForm(){
                      />
                 </Form.Group>
                 <Button className="submitButton" type="register">
-                    Register
+                    Log In
                 </Button>
                 <Button className="submitButton" type="submit" onClick={onRegister}>
-                    Log In
+                    Register
                 </Button>
             </Form>
         </Container>
