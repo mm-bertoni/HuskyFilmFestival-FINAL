@@ -85,7 +85,7 @@ export default function ReviewForm({director, title, genre, screener, onReload})
                 </Form.Select>
                 <Button className="submitButton" type="submit"> Submit</Button>
             </Form>
-            <Button onClick={handleClick} variant="danger">DELETE SUBMISSION</Button>
+            <Button onClick={handleClick} className="submitButton">DELETE SUBMISSION</Button>
         </Container>
 
     );
