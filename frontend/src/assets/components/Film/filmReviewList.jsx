@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+
 import Container from "react-bootstrap/Container";
 
 import Film from "./filmToReview";
@@ -7,7 +7,7 @@ import Film from "./filmToReview";
 export default function FilmReviewList() {
   const [films, setFilms] = useState([]);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
+  /*const navigate = useNavigate();*/
 
   /* useEffect(() => {
     const isLoggedIn = localStorage.getItem("adminLoggedIn");

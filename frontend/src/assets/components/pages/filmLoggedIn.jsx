@@ -1,9 +1,24 @@
 import Container from "react-bootstrap/esm/Container";
 import FilmList from "../Film/filmReviewList";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import {useEffect} from "react";
+
 
 export default function FilmLoggedIn() {
+   const navigate = useNavigate();
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("adminLoggedIn");
+    if (!isLoggedIn) {
+      navigate("/filmAdmin");
+    }
+  }, [navigate]);
+
+  if (!localStorage.getItem("adminLoggedIn")) {
+    return null;
+  } 
+
   return (
     <>
       <Container>
