@@ -1,6 +1,6 @@
 import express from "express";
 import session from "express-session";
-import passport from "./config/passport.js";
+import passport from "./config/passportM.js";
 import path from "path";
 import { fileURLToPath } from "url";
 import ticketsRouter from "./server/routes/tickets.js";
@@ -9,7 +9,7 @@ import filmCountRouter from "./server/routes/countFilms.js";
 import deleteFilmRouter from "./server/routes/deleteFilm.js";
 import updateFilmRouter from "./server/routes/updateFilmStatus.js";
 import filmSubmitRouter from "./server/routes/filmSubmit.js";
-import authPRouter from "./server/routes/AuthP.js";
+
 import authMargaret from "./server/routes/AuthM.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -44,7 +44,7 @@ app.use(passport.session());
 
 // API Routes MUST come BEFORE static files
 app.use("/api/tickets", ticketsRouter);
-app.use("/api/authP", authPRouter);
+
 // Attempting to add my Auth route
 app.use(authMargaret);
 
