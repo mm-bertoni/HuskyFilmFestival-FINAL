@@ -9,7 +9,7 @@ export default function FilmReviewList() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  /* useEffect(() => {
     const isLoggedIn = localStorage.getItem("adminLoggedIn");
     if (!isLoggedIn) {
       navigate("/filmAdmin");
@@ -18,7 +18,7 @@ export default function FilmReviewList() {
 
   if (!localStorage.getItem("adminLoggedIn")) {
     return null;
-  }
+  } */
 
   const reloadFilms = async () => {
     //console.log("reloadFilms triggered");

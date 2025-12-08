@@ -1,5 +1,9 @@
 .filmFormContainer {
-  margin: 5% auto;
+  
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid white; 
+  border-radius: 8px;
 }
 
 .formText {
@@ -17,4 +21,8 @@
   border-color: #c8102e;
   border-radius: "4px";
   border: 5% auto;
+}
+
+.submitButton:hover {
+    background-color: #c8102e;
 }

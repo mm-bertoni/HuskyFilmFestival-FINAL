@@ -101,7 +101,7 @@ export default function FilmForm() {
           />
         </Form.Group>
 
-        <Button className="submitButton" type="submit">
+        <Button variant="primary" className="submitButton" type="submit">
           Submit
         </Button>
       </Form>
