@@ -144,7 +144,7 @@ export default function AdminTicketList() {
   );
 
   return (
-    <div className="min-h-screen py-8 px-4">
+    <div className="min-h-screen py-8 px-4 text-white">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="rounded-lg shadow-sm p-6 mb-6">
