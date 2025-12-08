@@ -38,6 +38,9 @@ export default function AdminForm(){
     const onRegister = async (evt) => {
         evt.preventDefault();
         console.log("Register Attempt: ", login);
+        if(login.password.trim.length === 0 || login.user.trim.length === 0 ){
+            alert("Username and password must both be filled in. Please try again.");
+        } else {
         try {
             const response = await fetch("/registerUser", {
                 method: 'POST',
@@ -62,7 +65,9 @@ export default function AdminForm(){
             console.error("Error in sending POST with user info:", error);
             alert("Network error during registration");
         }
+        }
     }
+
 
     return(
         <Container className="filmFormContainer">
