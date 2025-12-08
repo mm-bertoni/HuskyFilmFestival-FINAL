@@ -23,7 +23,7 @@ export default function AdminTicketList() {
 
   const handleLogout = () => {
     localStorage.removeItem("adminLoggedIn");
-    navigate("/admin/login");
+    navigate("/filmAdmin");
   };
 
   const handleFilmPage = () => {
@@ -203,6 +203,12 @@ export default function AdminTicketList() {
                   ${totalRevenue.toFixed(2)}
                 </div>
               </div>
+              <div className="text-left">
+                <span className="text-sm text-gray-600 text-left">
+                  Currently showing:{" "}
+                  {isReversed ? "Newest first" : "Oldest first"}
+                </span>
+              </div>
             </div>
           )}
         </div>
@@ -215,19 +221,31 @@ export default function AdminTicketList() {
         ) : (
           <div className="rounded-lg shadow-sm overflow-hidden">
             <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className=" border-b border-gray-200">
+              <table className="w-full" style={{ tableLayout: "auto" }}>
+                <thead className="border-b border-gray-200">
                   <tr>
-                    <th className="text-left py-8 px-6 text-sm font-semibold text-gray-700">
+                    <th
+                      className="text-left py-8 px-6 text-sm font-semibold text-gray-700"
+                      style={{ width: "25%" }}
+                    >
                       Name
                     </th>
-                    <th className="text-center py-8 px-6 text-sm font-semibold text-gray-700">
+                    <th
+                      className="text-center py-8 px-6 text-sm font-semibold text-gray-700"
+                      style={{ width: "25%" }}
+                    >
                       Number of Tickets
                     </th>
-                    <th className="text-right py-8 px-6 text-sm font-semibold text-gray-700">
+                    <th
+                      className="text-center py-8 px-6 text-sm font-semibold text-gray-700"
+                      style={{ width: "20%" }}
+                    >
                       Total Cost
                     </th>
-                    <th className="text-right py-8 px-6 text-sm font-semibold text-gray-700">
+                    <th
+                      className="text-center py-8 px-6 text-sm font-semibold text-gray-700"
+                      style={{ width: "30%" }}
+                    >
                       Actions
                     </th>
                   </tr>
@@ -243,10 +261,10 @@ export default function AdminTicketList() {
                           {ticket.numTickets || 0}
                         </span>
                       </td>
-                      <td className="py-8 px-6 text-sm text-gray-900 text-right font-semibold">
+                      <td className="py-8 px-6 text-sm text-gray-900 text-center font-semibold">
                         ${(ticket.totalCost || 0).toFixed(2)}
                       </td>
-                      <td className="py-8 px-6 text-right">
+                      <td className="py-8 px-6 text-center">
                         <button
                           onClick={() => handleDelete(ticket._id)}
                           disabled={deleting === ticket._id}
@@ -257,7 +275,7 @@ export default function AdminTicketList() {
                         </button>
                         <button
                           onClick={() => handleEditClick(ticket)}
-                          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 py-2 px-3 rounded-lg transition"
+                          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 py-2 px-3 rounded-lg transition ml-2"
                         >
                           ✏️ Edit
                         </button>

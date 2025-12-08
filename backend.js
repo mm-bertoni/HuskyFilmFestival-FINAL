@@ -4,7 +4,6 @@ import passport from "./config/passport.js";
 import path from "path";
 import { fileURLToPath } from "url";
 import ticketsRouter from "./server/routes/tickets.js";
-import authRoutes from "./server/routes/auth.js";
 import filmRouter from "./server/routes/films.js";
 import filmCountRouter from "./server/routes/countFilms.js";
 import deleteFilmRouter from "./server/routes/deleteFilm.js";
@@ -45,7 +44,6 @@ app.use(passport.session());
 
 // API Routes MUST come BEFORE static files
 app.use("/api/tickets", ticketsRouter);
-app.use("/api/auth", authRoutes);
 app.use("/api/authP", authPRouter);
 // Attempting to add my Auth route
 app.use(authMargaret);
