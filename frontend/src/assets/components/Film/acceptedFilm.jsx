@@ -8,18 +8,9 @@ import PropTypes from "prop-types";
 export default function FilmToReview({ director, title, genre }) {
   return (
     <Col>
-      <Card style={{ width: "18rem" }} className="acceptedCard gy-1">
-        <Card.Body>
-          <Card.Title>{title}</Card.Title>
-          <Card.Text className="cardText">Director: {director}</Card.Text>
-          <Card.Text className="cardText">Genre: {genre}</Card.Text>
-        </Card.Body>
-      </Card>
-    </Col>
-  );
-}
+   
 
-                <Card style={{width: '18rem'}} className="acceptedCard mx-auto">
+                <Card  className="acceptedCard mb-3">
                     <Card.Body>
                         <Card.Title
                             style={{color:'white'}}
@@ -33,7 +24,7 @@ export default function FilmToReview({ director, title, genre }) {
                     </Card.Body>
                 </Card>
                 
-            </Col>
+        </Col>
         
 
     );
