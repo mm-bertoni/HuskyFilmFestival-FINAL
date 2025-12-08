@@ -19,6 +19,26 @@ export default function FilmToReview({ director, title, genre }) {
   );
 }
 
+                <Card style={{width: '18rem'}} className="acceptedCard mx-auto">
+                    <Card.Body>
+                        <Card.Title
+                            style={{color:'white'}}
+                        >{title}</Card.Title>
+                        <Card.Text className="cardText">
+                            Director: {director} 
+                        </Card.Text>
+                        <Card.Text className="cardText">
+                            Genre: {genre}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+                
+            </Col>
+        
+
+    );
+
+}
 FilmToReview.propTypes = {
   director: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
