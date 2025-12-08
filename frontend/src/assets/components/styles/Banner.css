@@ -4,7 +4,7 @@ body {
 }
 
 .hero-section {
-  background: #C8102E;
+  background: diagonal-gradient(to bottom right, #C8102E, white);
   padding: 60px 20px;
 }
 
