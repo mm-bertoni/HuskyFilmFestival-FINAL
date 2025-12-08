@@ -188,7 +188,7 @@ export default function AdminTicketList() {
 
           {/* Summary Statistics */}
           {tickets.length > 0 && (
-            <div className="border-t pt-4 grid grid-cols-2 gap-4">
+            <div className="border-t pt-4 grid grid-cols-2 gap-4 text-white">
               <div>
                 <span className="text-sm text-gray-600">
                   Total Tickets Sold:
