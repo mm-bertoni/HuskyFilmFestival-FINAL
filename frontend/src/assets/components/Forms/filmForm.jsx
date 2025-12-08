@@ -30,13 +30,14 @@ export default function FilmForm() {
       });
       if (res.ok) {
         console.log("Data posted successfully");
+        alert("We have received your submission for: ",application.title);
         // clear after submission
         setApplication({ director: "", title: "", genre: "", screener: "" });
         // TEsting
         window.location.reload(); // Trying to force a reload after submission.
       }
     } catch (error) {
-      console.error("Error submitting film:", error);
+      alert("Error submitting film:", error);
     }
   };
 
@@ -66,22 +67,25 @@ export default function FilmForm() {
             }
           />
         </Form.Group>
-
         <Form.Group className="mb-3" controlId="formBasicGenre">
           <Form.Label className="text-white">Film Genre</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder=""
+          <Form.Select
             value={application.genre}
             onChange={(e) =>
               setApplication({ ...application, genre: e.target.value })
             }
-          />
+          >
+            <option value="Action">Action</option>
+            <option value="Drama">Drama</option>
+            <option value="Romance">Romance</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Horror">Horror</option>
+          </Form.Select>
           <Form.Text className="formText">
             {" "}
             {/* Added extra class for styling */}
-            Please try to pick one from the following: Action, Drama, Romance,
-            Comedy, Fantasy. If none of those fit, you may enter your own.
+            Select a Genre From the List
           </Form.Text>
         </Form.Group>
 
