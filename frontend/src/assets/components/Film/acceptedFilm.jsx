@@ -8,7 +8,7 @@ export default function FilmToReview({director, title, genre}){
     return(
             <Col>
 
-                <Card style={{width: '18rem', padding: '2rem'}} className="acceptedCard gy-1">
+                <Card style={{width: '18rem', margin: '2rem'}} className="acceptedCard">
                     <Card.Body>
                         <Card.Title
                             style={{color:'white'}}
