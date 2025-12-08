@@ -226,7 +226,9 @@ export default function AdminTicketList() {
                   <tr>
                     <th
                       className="text-left py-8 px-6 text-sm font-semibold text-gray-700"
-                      style={{ width: "25%" }}
+                      style={{ width: "25%", 
+                        text:"white"
+                      }}
                     >
                       Name
                     </th>
