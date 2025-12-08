@@ -1,12 +1,14 @@
 //import Container from 'react-bootstrap/Container';
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
 //import ReviewForm from '../Forms/reviewForm';
-import '../styles/acceptedFilm.css';
+import "../styles/acceptedFilm.css";
+import PropTypes from "prop-types";
 
-export default function FilmToReview({director, title, genre}){
-    return(
-            <Col>
+export default function FilmToReview({ director, title, genre }) {
+  return (
+    <Col>
+   
 
                 <Card  className="acceptedCard mb-3">
                     <Card.Body>
@@ -22,9 +24,14 @@ export default function FilmToReview({director, title, genre}){
                     </Card.Body>
                 </Card>
                 
-            </Col>
+        </Col>
         
 
     );
 
 }
+FilmToReview.propTypes = {
+  director: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
+};
