@@ -13,6 +13,7 @@ export default function ReviewForm({director, title, genre, screener, onReload})
     const onSubmit = async (evt) => {
         evt.preventDefault();
         console.log("Selection made:", selected);
+        alert("Your selection was saved");
         // Will put comms to Server here
         // Check if delete or setting status
         

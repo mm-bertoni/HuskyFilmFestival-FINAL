@@ -30,13 +30,14 @@ export default function FilmForm() {
       });
       if (res.ok) {
         console.log("Data posted successfully");
+        alert("We have received your submission for: ",application.title);
         // clear after submission
         setApplication({ director: "", title: "", genre: "", screener: "" });
         // TEsting
         window.location.reload(); // Trying to force a reload after submission.
       }
     } catch (error) {
-      console.error("Error submitting film:", error);
+      alert("Error submitting film:", error);
     }
   };
 
