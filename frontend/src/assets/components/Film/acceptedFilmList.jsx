@@ -70,7 +70,7 @@ export default function FilmReviewList(){
     }
     return(
         <Container>
-            <Row>
+            <Row xs={2} md={3} lg={5}>
                 
                     {films.map(renderFilm)}
                
