@@ -4,7 +4,10 @@ body {
 }
 
 .hero-section {
-  background: #C8102E;
+
+  background: linear-gradient(to top left, #C8102E, white);
+
+
   padding: 60px 20px;
 }
 
