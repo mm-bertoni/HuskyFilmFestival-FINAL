@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 export default function TicketForm({ isOpen, onClose, editTicket, onUpdate }) {
     console.log('TicketForm on TicketPage:', { 
@@ -171,3 +172,15 @@ if (isOpen === false && editTicket === null) {
     </Container>
   );
 }
+
+TicketForm.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  editTicket: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    numTickets: PropTypes.number.isRequired,
+    totalCost: PropTypes.number.isRequired
+  }),
+  onUpdate: PropTypes.func.isRequired
+};
