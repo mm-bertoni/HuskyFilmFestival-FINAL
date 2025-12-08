@@ -6,14 +6,14 @@ function usersDB(){
     // ADD THESE DEBUG LOGS
     console.log("ATLAS_URI exists:", !!connectionURI);
     console.log("ATLAS_URI starts with:", connectionURI?.substring(0, 20));
-    //console.log("Connection: ", connectionURI);
-    //const MONGODB_URI = process.env.MONGODB_URI;
+    console.log("Connection: ", connectionURI);
+    const MONGODB_URI = process.env.MONGODB_URI;
     const DB_NAME = "userDatabase";
     const COLLECTION_NAME = "users";
 
   const connect = async() => {
     // Connect with client
-    const client = new MongoClient(connectionURI);
+    const client = new MongoClient(MONGODB_URI);
     await client.connect();
     console.log("Connected to Client")
     const usersDB = client.db(DB_NAME).collection(COLLECTION_NAME);
