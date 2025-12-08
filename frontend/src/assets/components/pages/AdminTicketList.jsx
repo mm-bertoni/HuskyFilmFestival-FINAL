@@ -14,16 +14,20 @@ export default function AdminTicketList() {
   const navigate = useNavigate();
 
   // check authentication
-  useEffect(() => {
-    const isLoggedIn = localStorage.getItem("adminLoggedIn");
-    if (!isLoggedIn) {
-      navigate("/admin/login");
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   const isLoggedIn = localStorage.getItem("adminLoggedIn");
+  //   if (!isLoggedIn) {
+  //     navigate("/admin/login");
+  //   }
+  // }, [navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem("adminLoggedIn");
     navigate("/admin/login");
+  };
+
+  const handleFilmPage = () => {
+    navigate("/loggedInAdmin");
   };
 
   // Fetch tickets from API (same origin)
@@ -94,9 +98,9 @@ export default function AdminTicketList() {
     fetchTickets();
   }, []);
 
-  if (!localStorage.getItem("adminLoggedIn")) {
-    return null;
-  }
+  // if (!localStorage.getItem("adminLoggedIn")) {
+  //   return null;
+  // }
 
   if (loading) {
     return (
@@ -146,12 +150,18 @@ export default function AdminTicketList() {
         <div className="rounded-lg shadow-sm p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">
+              <h1 className="text-3xl font-bold text-gray-900 mt-4">
                 Ticket Manager
               </h1>
               <p className="text-gray-600 mt-1">
                 {tickets.length} {tickets.length === 1 ? "order" : "orders"}
               </p>
+              <button
+                onClick={handleFilmPage}
+                className="flex items-center gap-2 bg-blue-600 text-black py-2 px-4 rounded-lg hover:bg-blue-700 transition"
+              >
+                Film Approval
+              </button>
             </div>
             <button
               onClick={handleToggleOrder}
