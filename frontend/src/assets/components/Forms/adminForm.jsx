@@ -24,6 +24,7 @@ export default function AdminForm(){
             });
             
             if (response.redirected) {
+                localStorage.setItem("adminLoggedIn", "true");
                 window.location.href = response.url;
             } else {
                 const data = await response.json();

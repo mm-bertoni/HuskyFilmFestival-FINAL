@@ -98,9 +98,9 @@ export default function AdminTicketList() {
     fetchTickets();
   }, []);
 
-  // if (!localStorage.getItem("adminLoggedIn")) {
-  //   return null;
-  // }
+  if (!localStorage.getItem("adminLoggedIn")) {
+    return null;
+  }
 
   if (loading) {
     return (
