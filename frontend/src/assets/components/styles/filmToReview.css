@@ -1,13 +1,16 @@
-.filmBlock{
-    margin: 5% auto; 
-    border: 5px solid #C8102E;
-    padding:5%; 
+.filmBlock {
+  margin: 5% auto;
+  border: 5px solid #c8102e;
+  padding: 5%;
 }
 
 .filmInfo {
-   word-break: break-all; 
-   color: white; 
-   font-size:x-large;
-   font-style: italic; 
+  word-break: break-all;
+  color: white;
+  font-size: x-large;
+  font-style: italic;
 }
 
+h2 {
+  color: white;
+}

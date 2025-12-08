@@ -13,13 +13,13 @@ export default function AdminTicketList() {
   const [isReversed, setIsReversed] = useState(false);
   const navigate = useNavigate();
 
-  // check authentication
-  // useEffect(() => {
-  //   const isLoggedIn = localStorage.getItem("adminLoggedIn");
-  //   if (!isLoggedIn) {
-  //     navigate("/admin/login");
-  //   }
-  // }, [navigate]);
+  //check authentication
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("adminLoggedIn");
+    if (!isLoggedIn) {
+      navigate("/filmAdmin");
+    }
+  }, [navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem("adminLoggedIn");
