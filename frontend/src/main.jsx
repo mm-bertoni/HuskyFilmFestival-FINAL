@@ -8,7 +8,6 @@ import IndexPage from "./assets/components/pages/IndexPage";
 import FilmSubmissionPage from "./assets/components/pages/filmSubmissionPage";
 import TicketPage from "./assets/components/pages/TicketPage";
 import AdminTicketList from "./assets/components/pages/AdminTicketList";
-import AdminLogin from "./assets/components/pages/AdminLogin";
 import Footer from "./assets/components/Footer";
 import FilmAdminPage from "./assets/components/pages/filmAdminPage";
 import AcceptedFilmPage from "./assets/components/pages/acceptedFilmPage";
@@ -26,7 +25,6 @@ root.render(
         <Route path="/acceptedFilms" element={<AcceptedFilmPage />} />
         <Route path="/filmAdmin" element={<FilmAdminPage />} />
         <Route path="/tickets" element={<TicketPage />} />
-        <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/adminTickets" element={<AdminTicketList />} />
         <Route path="/loggedInAdmin" element ={<FilmLoggedIn/>}/>
       </Routes>
