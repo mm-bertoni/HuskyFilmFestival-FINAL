@@ -107,7 +107,7 @@ export default function AdminTicketList() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <RefreshCw className="w-8 h-8 animate-spin text-blue-600 mx-auto mb-2" />
-          <p className="text-white">Loading tickets...</p>
+          <p className="text-gray-600">Loading tickets...</p>
         </div>
       </div>
     );
@@ -150,10 +150,10 @@ export default function AdminTicketList() {
         <div className="rounded-lg shadow-sm p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-3xl font-bold text-white mt-4">
+              <h1 className="text-3xl font-bold text-gray-900 mt-4">
                 Ticket Manager
               </h1>
-              <p className="text-white mt-1">
+              <p className="text-gray-600 mt-1">
                 {tickets.length} {tickets.length === 1 ? "order" : "orders"}
               </p>
               <button
@@ -188,24 +188,26 @@ export default function AdminTicketList() {
 
           {/* Summary Statistics */}
           {tickets.length > 0 && (
-            <div className="border-t pt-4">
-              <div className="grid grid-cols-2 gap-4 mb-3">
-                <div>
-                  <div className="text-sm text-white">Total Tickets Sold:</div>
-                  <div className="text-xl font-bold text-blue-600">
-                    {totalTicketsSold}
-                  </div>
-                </div>
-                <div>
-                  <div className="text-sm text-white">Total Revenue:</div>
-                  <div className="text-xl font-bold text-green-600">
-                    ${totalRevenue.toFixed(2)}
-                  </div>
+            <div className="border-t pt-4 grid grid-cols-2 gap-4">
+              <div>
+                <span className="text-sm text-gray-600">
+                  Total Tickets Sold:
+                </span>
+                <div className="text-2xl font-bold text-blue-600">
+                  {totalTicketsSold}
                 </div>
               </div>
-              <div className="text-sm text-white">
-                Currently showing:{" "}
-                {isReversed ? "Newest first" : "Oldest first"}
+              <div>
+                <span className="text-sm text-gray-600">Total Revenue:</span>
+                <div className="text-2xl font-bold text-green-600">
+                  ${totalRevenue.toFixed(2)}
+                </div>
+              </div>
+              <div className="text-left">
+                <span className="text-sm text-gray-600 text-left">
+                  Currently showing:{" "}
+                  {isReversed ? "Newest first" : "Oldest first"}
+                </span>
               </div>
             </div>
           )}
@@ -251,15 +253,15 @@ export default function AdminTicketList() {
                 <tbody className="divide-y divide-gray-200">
                   {tickets.map((ticket) => (
                     <tr key={ticket._id} className="hover: transition">
-                      <td className="py-8 px-6 text-sm text-white font-medium">
+                      <td className="py-8 px-6 text-sm text-gray-900 font-medium">
                         {ticket.name || "N/A"}
                       </td>
-                      <td className="py-8 px-6 text-sm text-white text-center">
+                      <td className="py-8 px-6 text-sm text-gray-900 text-center">
                         <span className="inline-flex items-center justify-center min-w-8 h-8 px-3 rounded-full bg-blue-100 text-blue-800 font-semibold">
                           {ticket.numTickets || 0}
                         </span>
                       </td>
-                      <td className="py-8 px-6 text-sm text-white text-center font-semibold">
+                      <td className="py-8 px-6 text-sm text-gray-900 text-center font-semibold">
                         ${(ticket.totalCost || 0).toFixed(2)}
                       </td>
                       <td className="py-8 px-6 text-center">
