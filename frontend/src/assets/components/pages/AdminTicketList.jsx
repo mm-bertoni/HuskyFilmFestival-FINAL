@@ -188,26 +188,24 @@ export default function AdminTicketList() {
 
           {/* Summary Statistics */}
           {tickets.length > 0 && (
-            <div className="border-t pt-4 grid grid-cols-2 gap-4">
-              <div>
-                <span className="text-sm text-white">
-                  Total Tickets Sold:
-                </span>
-                <div className="text-2xl font-bold text-blue-600">
-                  {totalTicketsSold}
+            <div className="border-t pt-4">
+              <div className="grid grid-cols-2 gap-4 mb-3">
+                <div>
+                  <div className="text-sm text-white">Total Tickets Sold:</div>
+                  <div className="text-xl font-bold text-blue-600">
+                    {totalTicketsSold}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-sm text-white">Total Revenue:</div>
+                  <div className="text-xl font-bold text-green-600">
+                    ${totalRevenue.toFixed(2)}
+                  </div>
                 </div>
               </div>
-              <div>
-                <span className="text-sm text-white">Total Revenue:</span>
-                <div className="text-2xl font-bold text-green-600">
-                  ${totalRevenue.toFixed(2)}
-                </div>
-              </div>
-              <div className="text-left">
-                <span className="text-sm text-white text-left">
-                  Currently showing:{" "}
-                  {isReversed ? "Newest first" : "Oldest first"}
-                </span>
+              <div className="text-sm text-white">
+                Currently showing:{" "}
+                {isReversed ? "Newest first" : "Oldest first"}
               </div>
             </div>
           )}
