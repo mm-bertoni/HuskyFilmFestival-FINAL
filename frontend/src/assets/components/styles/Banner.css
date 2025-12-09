@@ -25,7 +25,7 @@ body {
 }
 
 .hero-text {
-  color: #C8102E;
+  color: white;
   flex: 1;
   font-family: "Lato", sans-serif;
 }
@@ -33,7 +33,7 @@ body {
 .hero-text h1 {
   font-size: 48px;
   margin-bottom: 20px;
-  color: #C8102E;
+  color: white;
 }
 
 .hero-text p {
