@@ -34,6 +34,7 @@ export default function FilmLoggedIn() {
             
             if (response.ok) {
                 alert("Log out successful");
+                navigate("/")
             } else {
                 alert("Issue logging out: " + (data.message || "Unknown error"));
             }
