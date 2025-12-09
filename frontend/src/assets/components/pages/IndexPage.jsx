@@ -18,8 +18,8 @@ export default function IndexPage() {
         </p>
       </div>
       <div className="cards-container">
-        <Card title="Buy Tickets Here!" image={ticketImage} link="/tickets" />
-        <Card title="Submit Your Film!" image={filmReel} link="/filmForm" />
+        <Card title="Buy Tickets Here!" image={ticketImage} alt="Tickets" link="/tickets" />
+        <Card title="Submit Your Film!" image={filmReel} alt="Film" link="/filmForm" />
       </div>
     </>
   );

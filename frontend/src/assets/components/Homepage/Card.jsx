@@ -3,10 +3,10 @@ import BootstrapCard from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function Card({ title, image, link }) {
+function Card({ title, image, link, alt }) {
   return (
     <BootstrapCard style={{ width: "20rem" }}>
-      <BootstrapCard.Img variant="top" src={image} />
+      <BootstrapCard.Img variant="top" src={image} alt={alt} />
       <BootstrapCard.Body>
         <BootstrapCard.Title>{title}</BootstrapCard.Title>
         <Link to={link}>
@@ -26,6 +26,7 @@ Card.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 };
 
 export default Card;
