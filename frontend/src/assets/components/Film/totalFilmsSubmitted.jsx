@@ -28,6 +28,7 @@ export default function TotalFilmsSubmitted(){
   return (
     <>
         <Container>
+            
             <FilmStatAggregator
                 stat={filmCount}
                 type=""
