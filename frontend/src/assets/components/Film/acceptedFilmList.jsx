@@ -1,83 +1,94 @@
+import { useState, useEffect } from "react";
+import Container from "react-bootstrap/Container";
+import Film from "./acceptedFilm";
 
-import {useState, useEffect} from "react";
-import Container from 'react-bootstrap/Container';
-/*import Row from 'react-bootstrap/Row';*/
+export default function AcceptedFilmsList() {
+  const [films, setFilms] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
+  const reloadFilms = async () => {
+    setLoading(true);
+    setError(null);
 
-import Film from './acceptedFilm';
+    try {
+      const res = await fetch(`/api/acceptedFilms`);
+      console.log("What is res getting", res);
 
-// TODO : CHANGE TO ONLY ACCEPTED STUFF
-export default function FilmReviewList(){
-    const [films, setFilms] = useState([]);
-    const [loading, setLoading] = useState(true);
+      if (!res.ok) {
+        throw new Error(`Failed to fetch accepted films: ${res.status}`);
+      }
 
-    const reloadFilms = async () => {
-        //console.log("reloadFilms triggered");
-        // Testing
-        setLoading(true);
-        const res = await fetch(`/api/acceptedFilms`);
-        console.log("What is res gettting", res);
-        if(!res.ok){
-            console.error("Failed to fetch films", res.status);
-            setLoading(false);
-            return;
-
-        } 
-            const data = await res.json();
-            //console.log("Full data received:", data);
-            setFilms(data.films || []); // Defaults to empty array if issue
-            setLoading(false);
-
-
-        };
-
-    useEffect(()=>{
-        
-        reloadFilms();
-
-    },[]);
-    
-    
-    function renderFilm(film){
-        return (
-            <Film
-            key = {film._id}
-            director={film.director}
-            title={film.title}
-            genre={film.genre}
-            />
-        );
-
+      const data = await res.json();
+      setFilms(data.films || []);
+    } catch (err) {
+      console.error("Failed to fetch accepted films:", err);
+      setError("Unable to load official selections. Please try again.");
+    } finally {
+      setLoading(false);
     }
+  };
 
-    // Diagnostic log just before render to catch non-array types
-    //console.log('films before render:', films, 'isArray:', Array.isArray(films), 'toString:', Object.prototype.toString.call(films));
+  useEffect(() => {
+    reloadFilms();
+  }, []);
 
-    if(loading){
-        return(
-            <Container>
-                <div>Loading Films...</div>
-            </Container>
-        );
-    }
-
-    if(!films || films.length === 0){
-        return(
-            <Container>
-                <div>Check Back Later For Accepted Films</div>
-            </Container>
-        )
-    }
-    return(
-        <Container>
-            
-                
-                    {films.map(renderFilm)}
-               
-                
-            
-            
-        </Container>
+  if (loading) {
+    return (
+      <Container>
+        <div role="status" aria-live="polite">
+          <p>Loading official selections...</p>
+        </div>
+      </Container>
     );
+  }
+
+  if (error) {
+    return (
+      <Container>
+        <div role="alert" aria-live="assertive">
+          <p className="text-danger">{error}</p>
+          <button onClick={reloadFilms} className="btn btn-primary">
+            Retry
+          </button>
+        </div>
+      </Container>
+    );
+  }
+
+  if (!films || films.length === 0) {
+    return (
+      <Container>
+        <section aria-labelledby="no-films-heading">
+          <h2 id="no-films-heading">Official Selections</h2>
+          <p>Official selections will be announced soon. Check back later!</p>
+        </section>
+      </Container>
+    );
+  }
+
+  return (
+    <Container as="section" aria-labelledby="accepted-films-heading">
+      <header>
+        <h2 id="accepted-films-heading">Official Selections</h2>
+        <p aria-live="polite">
+          {films.length} film{films.length === 1 ? "" : "s"} selected
+        </p>
+      </header>
+      <div
+        role="list"
+        aria-label={`${films.length} officially selected film${films.length === 1 ? "" : "s"}`}
+      >
+        {films.map((film) => (
+          <div key={film._id} role="listitem">
+            <Film
+              director={film.director}
+              title={film.title}
+              genre={film.genre}
+            />
+          </div>
+        ))}
+      </div>
+    </Container>
+  );
 }
-    

@@ -1,36 +1,33 @@
-//import Container from 'react-bootstrap/Container';
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
-//import ReviewForm from '../Forms/reviewForm';
 import "../styles/acceptedFilm.css";
 import PropTypes from "prop-types";
 
-export default function FilmToReview({ director, title, genre }) {
+export default function AcceptedFilm({ director, title, genre }) {
   return (
     <Col className="mb-3">
-   
-
-                <Card  className="acceptedCard mb-3">
-                    <Card.Body>
-                        <Card.Title
-                            style={{color:'white'}}
-                        >{title}</Card.Title>
-                        <Card.Text className="cardText">
-                            Director: {director} 
-                        </Card.Text>
-                        <Card.Text className="cardText">
-                            Genre: {genre}
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                
-        </Col>
-        
-
-    );
-
+      <Card className="acceptedCard mb-3" as="article">
+        <Card.Body>
+          <Card.Title as="h3" style={{ color: "white" }}>
+            {title}
+          </Card.Title>
+          <Card.Text as="dl" className="cardText">
+            <div>
+              <dt>Director:</dt>
+              <dd>Director: {director}</dd>
+            </div>
+            <div>
+              <dt>Genre:</dt>
+              <dd>Genre: {genre}</dd>
+            </div>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
+  );
 }
-FilmToReview.propTypes = {
+
+AcceptedFilm.propTypes = {
   director: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   genre: PropTypes.string.isRequired,

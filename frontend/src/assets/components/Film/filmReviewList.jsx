@@ -1,57 +1,57 @@
 import { useState, useEffect } from "react";
-
 import Container from "react-bootstrap/Container";
-
 import Film from "./filmToReview";
 
 export default function FilmReviewList() {
   const [films, setFilms] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [error, setError] = useState(null);
 
   const reloadFilms = async () => {
-    //console.log("reloadFilms triggered");
-    // Testing
     setLoading(true);
-    const res = await fetch(`/api/films`);
-    console.log("What is res gettting", res);
-    if (!res.ok) {
-      console.error("Failed to fetch films", res.status);
+    setError(null);
+
+    try {
+      const res = await fetch(`/api/films`);
+      console.log("What is res getting", res);
+
+      if (!res.ok) {
+        throw new Error(`Failed to fetch films: ${res.status}`);
+      }
+
+      const data = await res.json();
+      setFilms(data.films || []); // Defaults to empty array if issue
+    } catch (err) {
+      console.error("Failed to fetch films:", err);
+      setError("Unable to load films. Please try again.");
+    } finally {
       setLoading(false);
-      return;
     }
-    const data = await res.json();
-    //console.log("Full data received:", data);
-    setFilms(data.films || []); // Defaults to empty array if issue
-    setLoading(false);
   };
 
   useEffect(() => {
     reloadFilms();
   }, []);
 
-  function renderFilm(film) {
-    return (
-      <Film
-        key={film._id}
-        director={film.director}
-        title={film.title}
-        genre={film.genre}
-        screener={film.screener}
-        status={film.status}
-        onReload={reloadFilms}
-        // Test
-      />
-    );
-  }
-
-  // Diagnostic log just before render to catch non-array types
-  //console.log('films before render:', films, 'isArray:', Array.isArray(films), 'toString:', Object.prototype.toString.call(films));
-
   if (loading) {
     return (
       <Container>
-        <div className="text-white">Loading Films...</div>
+        <div className="text-white" role="status" aria-live="polite">
+          <span aria-label="Loading">Loading films...</span>
+        </div>
+      </Container>
+    );
+  }
+
+  if (error) {
+    return (
+      <Container>
+        <div role="alert" aria-live="assertive">
+          <p className="text-danger">{error}</p>
+          <button onClick={reloadFilms} className="btn btn-primary">
+            Retry
+          </button>
+        </div>
       </Container>
     );
   }
@@ -59,9 +59,35 @@ export default function FilmReviewList() {
   if (!films || films.length === 0) {
     return (
       <Container>
-        <div className="text-white">No unreviewed films found</div>
+        <div className="text-white" role="status">
+          <p>No films awaiting review</p>
+        </div>
       </Container>
     );
   }
-  return <Container>{films.map(renderFilm)}</Container>;
+
+  return (
+    <Container as="section" aria-labelledby="film-list-heading">
+      <h2 id="film-list-heading" className="visually-hidden">
+        Films Awaiting Review
+      </h2>
+      <div
+        role="list"
+        aria-label={`${films.length} film${films.length === 1 ? "" : "s"} awaiting review`}
+      >
+        {films.map((film) => (
+          <div key={film._id} role="listitem">
+            <Film
+              director={film.director}
+              title={film.title}
+              genre={film.genre}
+              screener={film.screener}
+              status={film.status}
+              onReload={reloadFilms}
+            />
+          </div>
+        ))}
+      </div>
+    </Container>
+  );
 }
