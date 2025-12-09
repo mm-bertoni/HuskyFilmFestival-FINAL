@@ -1,3 +1,10 @@
 .filmFormContainer {
     font-size: xx-large;
 }
+.submitButton {
+  background-color: #c8102e;
+  border: "2px solid";
+  border-color: #c8102e;
+  border-radius: "4px";
+  border: 5% auto;
+}

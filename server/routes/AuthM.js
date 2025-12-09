@@ -66,7 +66,13 @@ router.post("/logout", (req, res) => {
         error: err.message
       });
     }
+    passport.authenticate("local", {
+        successRedirect: "/loggedInAdmin",
+        failureRedirect: "/",
+    })
+
     res.status(200).json({ message: "Logout successful" });
+    
   });
 });
 
