@@ -43,13 +43,42 @@ router.post("/registerUser", async (req, res) =>{
 
 
 // Login (for filmAdmin form)
-router.post(
-    "/loginUser",
-    passport.authenticate("local", {
-        successRedirect: "/loggedInAdmin",
-        failureRedirect: "/filmAdmin?msg='Invalid credentials'",
-    })
-);
+// Login (for filmAdmin form) - JSON response version
+router.post("/loginUser", (req, res, next) => {
+    passport.authenticate("local", (err, user, info) => {
+        if (err) {
+            return res.status(500).json({ 
+                success: false, 
+                message: "Server error during authentication" 
+            });
+        }
+        
+        if (!user) {
+            return res.status(401).json({ 
+                success: false, 
+                message: info?.message || "Invalid credentials" 
+            });
+        }
+        
+        req.logIn(user, (err) => {
+            if (err) {
+                return res.status(500).json({ 
+                    success: false, 
+                    message: "Login failed" 
+                });
+            }
+            
+            return res.status(200).json({ 
+                success: true, 
+                message: "Login successful",
+                user: { 
+                    username: user.username,
+                    // Add any other non-sensitive user data you need
+                }
+            });
+        });
+    })(req, res, next);
+});
 
 //Get current user
 router.get("/user", isAuthenticated, (req, res) => {
