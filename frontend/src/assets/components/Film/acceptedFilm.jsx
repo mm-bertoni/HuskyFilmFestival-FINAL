@@ -9,7 +9,7 @@ export default function AcceptedFilm({ director, title, genre }) {
       <Card className="acceptedCard mb-3" as="article">
         <Card.Body>
           <Card.Title as="h3" style={{ color: "white" }}>
-            {title}
+            Film: {title}
           </Card.Title>
           <Card.Text as="dl" className="cardText">
             <div>
