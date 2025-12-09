@@ -25,7 +25,7 @@ export const findUserById = async (id) => {
     try {
 
         const objectID = new ObjectId(id);
-        const users = await UsersDB.getUser({ _id: ObjectId });
+        const users = await UsersDB.getUser({ _id: objectID });
         if (users && users.length > 0) {
             const user = users[0];
             console.log("Found:", user);
