@@ -38,8 +38,8 @@ export default function AdminForm(){
     
     const onRegister = async (evt) => {
         evt.preventDefault();
-        console.log("Register Attempt: ", login);
-        if(login.password.trim.length === 0 || login.user.trim.length === 0 ){
+        console.log("Register Attempt: ", login.username);
+        if(login.password.trim().length === 0 || login.username.trim().length === 0 ){
             alert("Username and password must both be filled in. Please try again.");
         } else {
         try {

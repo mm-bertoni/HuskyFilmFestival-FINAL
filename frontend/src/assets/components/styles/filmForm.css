@@ -15,7 +15,7 @@
   font-size: xx-large;
 }
 
-.submitButton {
+.submitButton, .submitButton:focus, .submitButton:active {
   background-color: #c8102e;
   border: "2px solid";
   border-color: #c8102e;
@@ -23,7 +23,3 @@
   border: 5% auto;
 }
 
-.submitButton:hover {
-    background-color: #c8102e;
-    border-color: #c8102e;
-}

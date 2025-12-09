@@ -2,11 +2,11 @@
 Anthropic. (2025, Dec 9). *Protected routes with React Router and Passport* [Generative AI chat] Claude Sonnet 4.5 https://claude.ai/share/9318a278-fd5f-425b-94a3-26655ee1c615
 
 */
-import { createContext, useContext, useState, useEffect } from 'react';
+import {useState, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
+import { AuthContext, useAuth } from './authContext';
 
-// Auth Context
-const AuthContext = createContext(null);
+
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -58,16 +58,9 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within AuthProvider');
-  }
-  return context;
-};
 
 // Protected Route Component
-const ProtectedRoute = ({ children }) => {
+export const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
 
   if (loading) {
