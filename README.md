@@ -40,7 +40,7 @@ Admin login page.
 ### Admin Ticket Management
 ![Admin Ticket Management](frontend/src/assets/images/screenshots/adminTicket.png)
 Admin can edit or delete ticket purchases here, and view total revenue.
-###Review films page
+### Review films page
 ![Review films](frontend/src/assets/images/screenshots/ReviewFilm.png)
 Admin cam review and approve films for screen, edit or delete entries.
 
