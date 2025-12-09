@@ -6,7 +6,7 @@ Margaret Bertoni, Utkarsh Dev
 ## Live Website Link:
 [Husky Film Fest Website](https://huskyfilmfestival-final.onrender.com/)
 ## Database Size at Time of Submission:
-[MongoDB](frontend/src/assets/images/screenshots/database.png)
+[MongoDB]()
 ## Video Link:
 [Video here](https://www.youtube.com/watch?v=KkN8o8clk_M&feature=youtu.be)
 ## Slides Link:
@@ -17,7 +17,7 @@ Margaret Bertoni, Utkarsh Dev
 [WebDev Class](https://johnguerra.co/classes/webDevelopment_online_fall_2025/)
 
 ## Project Objective
-HuskyFilmFestival is a full-stack web application that allows filmmakers to submit their films for screening consideration and enables users to purchase tickets for the festival. Built with React, Node.js, Express, and MongoDB, the platform provides a seamless experience for both creators and attendees.
+HuskyFilmFestival is a full-stack web application that allows filmmakers to submit their films for screening consideration and enables users to purchase tickets for the festival. Built with React, Node.js, Passport.js, Express, and MongoDB, the platform provides a seamless experience for both creators and attendees.
 
 An admin dashboard allows authorized users to log in, review submissions, and manage customer purchases, including editing or deleting records as needed. The project showcases a complete integration of front-end and back-end technologies to create a dynamic, responsive, and secure event management platform.
 
@@ -47,15 +47,16 @@ Admin cam review and approve films for screen, edit or delete entries.
 ## Instructions for Admin Mode
 1. Go to Admin Login from the Navbar.
 2. You will be redirected to the admin login page.
-3. Type your credentials and register them, then you can login with the same credentials.
+3. The admin username is HFFadmin1. The admin password is filmAdmin2025
 4. Once you login, you'll be redirected to the Review film page, where you can approve the films for screening. Using a button on top you can go to the ticket list where you can see the total revenue, no. of tickets, and can edit or delete entries
-5. There is a refresh button to reload the data, and logout button to logout.
+5. There is a button that allows you to go to the ticket admin page where you can review purchase stats and edit ticket purchases as needed.
 
 ## Tools used
 - React (frontend) 
 - Node.js (backend)
 - Express (server)
 - MongoDB (database)
+- Passport.js (authentication)
 - nodemon (dev)
 - ESLint, Prettier (code quality/formatting)
 - React-Bootstrap (styling)
@@ -64,7 +65,7 @@ Admin cam review and approve films for screen, edit or delete entries.
 - backend.js                 - main Express server (entry)
 - package.json               - project metadata & scripts
 - node_modules/              - installed packages
-- public/ or client/         - frontend assets (Created by React)
+- frontend assets (Created by React)
 - screenshots/               
 - README.md                  
 

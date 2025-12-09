@@ -23,7 +23,9 @@ export const createUser = async (user) => {
 
 export const findUserById = async (id) => {
     try {
-        const users = await UsersDB.getUser({ _id: id });
+
+        const objectID = new ObjectId(id);
+        const users = await UsersDB.getUser({ _id: ObjectId });
         if (users && users.length > 0) {
             const user = users[0];
             console.log("Found:", user);
