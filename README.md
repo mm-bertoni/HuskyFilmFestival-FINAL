@@ -41,18 +41,11 @@ Ticket admin login page.
 ![Admin Ticket Management](frontend/src/assets/images/screenshots/adminTicket.png)
 Ticket admin can edit or delete ticket purchases here, and view total revenue.
 
-## Instructions for Film Admin Mode
-1. Add \filmAdmin to the end of the homepage url.
-2. You will get to a login page: ![Film Admin Page](frontend/src/assets/images/screenshots/filmLogin.png)
-3. The configured user is username: mbertoni.  pw:1234
-4. Upon successful login, you will see all the films available to review: ![Film Review Page](frontend/src/assets/images/screenshots/filmsToReview.png)
-5. If you refresh the page manually, it will log you out
-
-## Instructions for Ticket Admin Mode
-1. Add /ticketAdmin to the end of the homepage url.
+## Instructions for Admin Mode
+1. Go to Admin Login from the Navbar.
 2. You will be redirected to the admin login page.
-3. Type your credentials. Pre-configured username:admin; password:admin123
-4. Once you login, you'll be redirected to the ticket list where you can see the total revenue, no. of tickets, and can edit or delete entries
+3. Type your credentials and register them, then you can login with the same credentials.
+4. Once you login, you'll be redirected to the Review film page, where you can approve the films for screening. Using a button on top you can go to the ticket list where you can see the total revenue, no. of tickets, and can edit or delete entries
 5. There is a refresh button to reload the data, and logout button to logout.
 
 ## Tools used
