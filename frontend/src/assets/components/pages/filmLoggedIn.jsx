@@ -57,14 +57,14 @@ export default function FilmLoggedIn() {
             >Ticket Page
             </Button>
           </Link>
-          <Link to="/logout">
+          
             <Button
               variant="primary"
               style={{ backgroundColor: "#C8102E", borderColor: "#C8102E" }}
               onClick={handleLogout}
             >LOGOUT
             </Button>
-          </Link>
+         
         </div>
         <FilmList />
       </Container>
