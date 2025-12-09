@@ -15,10 +15,10 @@ export default function FilmToReview({
     <Container
       className="filmBlock"
       as="article"
-      aria-labelledby={`film-title-${title.replace(/\s+/g, "-")}`}
+      aria-labelledby={`film-title-${title}`}
     >
       <header>
-        <h2 id={`film-title-${title.replace(/\s+/g, "-")}`}>Film: {title}</h2>
+        <h2 id={`film-title-${title}`}>Film: {title}</h2>
       </header>
 
       <dl className="film-details">
@@ -51,7 +51,7 @@ export default function FilmToReview({
           <dt>Selection Status:</dt>
           <dd>
             <span
-              className={`status-badge status-${status.toLowerCase().replace(/\s+/g, "-")}`}
+              /*className={`status-badge status-${status.toLowerCase().replace(/\s+/g, "-")}`}*/
               aria-label={`Current status: ${status}`}
             >
               {status}
@@ -60,9 +60,9 @@ export default function FilmToReview({
         </div>
       </dl>
 
-      <section aria-labelledby={`review-heading-${title.replace(/\s+/g, "-")}`}>
+      <section aria-labelledby={`review-heading-${title}`}>
         <h3
-          id={`review-heading-${title.replace(/\s+/g, "-")}`}
+          id={`review-heading-${title}`}
         >
           Review Actions for {title}
         </h3>
