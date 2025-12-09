@@ -5,7 +5,7 @@ body {
 
 .hero-section {
 
-  background: #A4804AB3;
+  background: white;
 
 
   padding: 60px 20px;
@@ -27,7 +27,7 @@ body {
 }
 
 .hero-text {
-  color: white;
+  color: #C8102E;
   flex: 1;
   font-family: "Lato", sans-serif;
 }
@@ -39,7 +39,7 @@ body {
 
 .hero-text p {
   font-size: 20px;
-  color: white;
+  color: #C8102E;
   font-style: italic;
 }
 
