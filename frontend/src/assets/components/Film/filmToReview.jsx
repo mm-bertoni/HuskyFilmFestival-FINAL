@@ -12,34 +12,60 @@ export default function FilmToReview({
   onReload,
 }) {
   return (
-    <>
-      <Container className="filmBlock">
-        <div>
-          <h2>Film:</h2>
-          <h3>{title}</h3>
-        </div>
-        <div>
-          <span>
-            <h2>Director:</h2>
-            <h3>{director}</h3>
-          </span>
-          <span>
-            <h2>Genre:</h2>
-            <h3>{genre}</h3>
-          </span>
+    <Container
+      className="filmBlock"
+      as="article"
+      aria-labelledby={`film-title-${title.replace(/\s+/g, "-")}`}
+    >
+      <header>
+        <h2 id={`film-title-${title.replace(/\s+/g, "-")}`}>Film: {title}</h2>
+      </header>
 
-          <span>
-            <h2>Screener Website:</h2>
-            <h3><a href={screener} className="filmInfo">
+      <dl className="film-details">
+        <div>
+          <dt>Director:</dt>
+          <dd>{director}</dd>
+        </div>
+
+        <div>
+          <dt>Genre:</dt>
+          <dd>{genre}</dd>
+        </div>
+
+        <div>
+          <dt>Screener Website:</dt>
+          <dd>
+            <a
+              href={screener}
+              className="filmInfo"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Watch screener for ${title} (opens in new tab)`}
+            >
               {screener}
-            </a></h3>
-          </span>
-          <span>
-            <h2>Selection Status:</h2>
-            <h3>{status}</h3>
-          </span>
+            </a>
+          </dd>
         </div>
 
+        <div>
+          <dt>Selection Status:</dt>
+          <dd>
+            <span
+              className={`status-badge status-${status.toLowerCase().replace(/\s+/g, "-")}`}
+              aria-label={`Current status: ${status}`}
+            >
+              {status}
+            </span>
+          </dd>
+        </div>
+      </dl>
+
+      <section aria-labelledby={`review-heading-${title.replace(/\s+/g, "-")}`}>
+        <h3
+          id={`review-heading-${title.replace(/\s+/g, "-")}`}
+        >
+          Review Actions for {title}
+        </h3>
         <ReviewForm
           director={director}
           title={title}
@@ -48,12 +74,12 @@ export default function FilmToReview({
           status={status}
           onReload={onReload}
         />
-      </Container>
-    </>
+      </section>
+    </Container>
   );
 }
 
-FilmToReview.PropTypes = {
+FilmToReview.propTypes = {
   director: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   genre: PropTypes.string.isRequired,

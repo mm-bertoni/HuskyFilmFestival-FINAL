@@ -6,35 +6,84 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <nav className="navbar">
+    <nav className="navbar" aria-label="Main navigation">
       <div className="logo">
-        <img src={logo} alt="Film Festival Logo" />
+        <Link to="/" aria-label="Husky Film Festival home">
+          <img src={logo} alt="Husky Film Festival" />
+        </Link>
       </div>
 
-      <div className="menu-icon" onClick={() => setIsOpen(!isOpen)}>
+      <button
+        className="menu-icon"
+        onClick={toggleMenu}
+        aria-label={isOpen ? "Close menu" : "Open menu"}
+        aria-expanded={isOpen}
+        aria-controls="navbar-menu"
+      >
         <div className="bar"></div>
         <div className="bar"></div>
         <div className="bar"></div>
-      </div>
+      </button>
 
-      <ul className={isOpen ? "active" : ""}>
-        <li>
-          <Link to="/" className="navbarLink">Home</Link>
+      <ul id="navbar-menu" className={isOpen ? "active" : ""} role="menu">
+        <li role="none">
+          <Link
+            to="/"
+            className="navbarLink"
+            role="menuitem"
+            onClick={closeMenu}
+          >
+            Home
+          </Link>
         </li>
-        <li>
-          <Link to="/filmForm" className="navbarLink">Submit a Film</Link>
+        <li role="none">
+          <Link
+            to="/filmForm"
+            className="navbarLink"
+            role="menuitem"
+            onClick={closeMenu}
+          >
+            Submit a Film
+          </Link>
         </li>
-        <li>
-          <Link to="/acceptedFilms" className="navbarLink">Official Selections</Link>
+        <li role="none">
+          <Link
+            to="/acceptedFilms"
+            className="navbarLink"
+            role="menuitem"
+            onClick={closeMenu}
+          >
+            Official Selections
+          </Link>
         </li>
-
-        <li>
-          <Link to="/tickets" className="navbarLink">Buy Tickets</Link>
+        <li role="none">
+          <Link
+            to="/tickets"
+            className="navbarLink"
+            role="menuitem"
+            onClick={closeMenu}
+          >
+            Buy Tickets
+          </Link>
         </li>
-
-        <li>
-          <Link to="/filmAdmin" className="navbarLink">Admin Login</Link>
+        <li role="none">
+          <Link
+            to="/filmAdmin"
+            className="navbarLink"
+            role="menuitem"
+            onClick={closeMenu}
+          >
+            Admin Login
+          </Link>
         </li>
       </ul>
     </nav>

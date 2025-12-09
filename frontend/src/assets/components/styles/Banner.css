@@ -5,9 +5,7 @@ body {
 
 .hero-section {
 
-  background: white;
-
-
+  background: linear-gradient(90deg, #C8102E, #8d1b2e);
   padding: 60px 20px;
 }
 
@@ -40,7 +38,6 @@ body {
 
 .hero-text p {
   font-size: 20px;
-  color: #C8102E;
   font-style: italic;
 }
 
