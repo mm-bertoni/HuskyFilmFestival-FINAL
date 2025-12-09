@@ -12,7 +12,7 @@ export default function FilmStatAggregator({ stat = "0", type = "" }) {
       as="section"
       aria-labelledby="stat-heading"
     >
-      <h2 id="stat-heading">{statLabel}</h2>
+      
       <p className="statText" aria-live="polite" aria-atomic="true">
         <span className="visually-hidden">{statLabel}: </span>
         <span className="stat-number">{statValue}</span>
