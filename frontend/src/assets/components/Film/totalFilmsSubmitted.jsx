@@ -58,7 +58,7 @@ export default function TotalFilmsSubmitted() {
   return (
     <Container>
       <section aria-labelledby="film-stats-heading">
-        <h2 id="film-stats-heading">Film Submission Statistics</h2>
+        <h2 id="film-stats-heading">Total Films Submitted:</h2>
         <div aria-live="polite" aria-atomic="true">
           <FilmStatAggregator stat={filmCount} type="" />
         </div>
