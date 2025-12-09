@@ -8,3 +8,7 @@
   border-radius: "4px";
   border: 5% auto;
 }
+.submitButton:hover {
+    background-color: #c8102e;
+    border-color: #c8102e;
+}
