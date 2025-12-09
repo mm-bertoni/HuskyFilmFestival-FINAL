@@ -110,11 +110,28 @@ Notes:
 - If your server uses a different port or script, update the commands accordingly.
 - Ensure MongoDB is reachable using the MONGO_URI you configured.
 
+## Redesigning
+The app has went through major redesigning in order to make it more usable, readable and accessible. The changes made are listed below:
+
+1. Color pallete
+   - In order to keep a more consistent color pallete and keeping with the theme of the website, the colors chosen have been repurposed, along with a new logo that uses this new color pallete. Since the app is about a Film Festival at Northeastern, we decided to use the same color pallete as the northeastern website, which can be found here. https://brand.northeastern.edu/design-and-experiences/color/. This color pallete has been used throughout the webpage.
+
+2. Typography
+   - Following NEU's website theme, we used the font "Lato", family sans-serif, as the font style for all places on the website.
+
+3. Admin authentication
+   - Passport.js has been used to implement authentication in the website. This allows us to reference a database of admin users to approve authenticaiton rather than have the credentials coded in. A single login page will allow access to both the film approval page and the ticket admin page.
+  
+4. Accessibility
+   - All pages, forms and components have now added accessibility, following the WCAG guidelines. The whole website has been made keyboard accessible, HTML semantic tags have been used, aria-labels have been added and alt-text has been added to images. A lighthouse score of 100 in accessibility has been achived for all pages.
+
 ## AI Usage
 This README was created/edited with assistance from GitHub Copilot (GPT-5 mini). 
 
 GitHub Copilot was used to help troubleshoot page loading issues (incorrect path configuration) and issues with rendering films - but did not allow it to auto generate/change files (GPT-5 mini).
 
 Anthropic's Claude was used to help troubleshoot reloading issues on the Film Review (admin) and Film Submission pages. It was also used to help understand browser error message codes. Claude was used to help troubleshoot during the process of deploying to Render, including understanding Render logs (discovered that there was some file naming issues and an incorrect path). (Sonnet 4.5)
+
+Claude was also used for assisting with adding accessibility to forms, components and pages. (Sonnet 4.5)
 
 The Husky Logo was generated for Project 2 (re-used on the homepage and navbar) and was originally created with Adobe Generative AI.
