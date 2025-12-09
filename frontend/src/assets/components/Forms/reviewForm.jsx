@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import PropTypes from "prop-types";
+import "../styles/filmForm.css";
 
 export default function ReviewForm({
   director,
