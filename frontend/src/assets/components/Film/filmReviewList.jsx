@@ -7,18 +7,7 @@ import Film from "./filmToReview";
 export default function FilmReviewList() {
   const [films, setFilms] = useState([]);
   const [loading, setLoading] = useState(true);
-  /*const navigate = useNavigate();*/
 
-  /* useEffect(() => {
-    const isLoggedIn = localStorage.getItem("adminLoggedIn");
-    if (!isLoggedIn) {
-      navigate("/filmAdmin");
-    }
-  }, [navigate]);
-
-  if (!localStorage.getItem("adminLoggedIn")) {
-    return null;
-  } */
 
   const reloadFilms = async () => {
     //console.log("reloadFilms triggered");

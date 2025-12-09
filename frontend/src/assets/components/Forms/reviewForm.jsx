@@ -89,7 +89,7 @@ export default function ReviewForm({
         </Form.Label>
         <Button className="submitButton" type="submit">
           {" "}
-          Submit
+          Save Decision
         </Button>
       </Form>
       <Button onClick={handleClick} className="submitButton">
