@@ -2,10 +2,16 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {useState} from "react";
+import {useNavigate} from 'react-router-dom';
+import {useAuth} from '../../components/authContext';
 import '../styles/adminForm.css';
+
+
 
 export default function AdminForm(){
     const [login, setLogin] = useState({username:"", password:""});
+    const navigate = useNavigate();
+    const {checkAuth} = useAuth();
     
     const onLogin = async (evt) => {
         evt.preventDefault();
@@ -22,12 +28,16 @@ export default function AdminForm(){
                     password: login.password
                 })
             });
+
+            const data = await response.json();
             
-            if (response.redirected) {
-                localStorage.setItem("adminLoggedIn", "true");
-                window.location.href = response.url;
+            if (response.ok) {
+                /* localStorage.setItem("adminLoggedIn", "true");
+                window.location.href = response.url; */
+                await checkAuth();
+                navigate('/loggedInAdmin');
             } else {
-                const data = await response.json();
+                
                 console.log("Login response:", data);
                 alert("Login failed: " + (data.message || "Unknown error"));
             }
