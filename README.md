@@ -34,12 +34,15 @@ On the "Official Selections" tab, see what films have been accepted.
 ### Ticket Form
 ![Ticket Form](frontend/src/assets/images/screenshots/ticketForm.png)
 Buy a ticket here.
-### Ticket Admin Login
+###Admin Login
 ![Admin Login](frontend/src/assets/images/screenshots/adminLogin.png)
-Ticket admin login page.
+Admin login page.
 ### Admin Ticket Management
 ![Admin Ticket Management](frontend/src/assets/images/screenshots/adminTicket.png)
-Ticket admin can edit or delete ticket purchases here, and view total revenue.
+Admin can edit or delete ticket purchases here, and view total revenue.
+###Review films page
+![Review films](frontend/src/assets/images/screenshots/ReviewFilm.png)
+Admin cam review and approve films for screen, edit or delete entries.
 
 ## Instructions for Admin Mode
 1. Go to Admin Login from the Navbar.
