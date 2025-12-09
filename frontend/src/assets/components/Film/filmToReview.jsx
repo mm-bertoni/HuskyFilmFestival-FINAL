@@ -80,10 +80,10 @@ export default function FilmToReview({
 }
 
 FilmToReview.propTypes = {
-  director: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
-  screener: PropTypes.string.isRequired,
-  status: PropTypes.string.isRequired,
+  director: PropTypes.string,
+  title: PropTypes.string,
+  genre: PropTypes.string,
+  screener: PropTypes.string,
+  status: PropTypes.string,
   onReload: PropTypes.func.isRequired,
 };
