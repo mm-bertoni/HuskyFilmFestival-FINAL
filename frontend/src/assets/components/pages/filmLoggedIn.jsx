@@ -18,6 +18,33 @@ export default function FilmLoggedIn() {
     return null;
   }
 
+  const handleLogout = async()=>{
+      try {
+            const response = await fetch("/logout", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            
+            });
+            
+            const data = await response.json();
+            console.log("Logout response:", response.status, data);
+            
+            if (response.ok) {
+                alert("Log out successful");
+                navigate("/")
+            } else {
+                alert("Issue logging out: " + (data.message || "Unknown error"));
+            }
+        } catch (error){
+            console.error("Error in sending POST with user info:", error);
+            alert("Error while logging out");
+        }
+  
+
+  };
+
   return (
     <>
       <main>
@@ -35,13 +62,11 @@ export default function FilmLoggedIn() {
                 View Tickets
               </Button>
               <Button
-                as={Link}
-                to="/logout"
-                variant="primary"
-                style={{ backgroundColor: "#C8102E", borderColor: "#C8102E" }}
-              >
-                Log Out
-              </Button>
+              variant="primary"
+              style={{ backgroundColor: "#C8102E", borderColor: "#C8102E" }}
+              onClick={handleLogout}
+            >LOGOUT
+            </Button>
             </nav>
           </div>
           <FilmList />

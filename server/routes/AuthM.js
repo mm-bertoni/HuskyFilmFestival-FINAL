@@ -66,7 +66,10 @@ router.post("/logout", (req, res) => {
         error: err.message
       });
     }
+    
+
     res.status(200).json({ message: "Logout successful" });
+    
   });
 });
 
