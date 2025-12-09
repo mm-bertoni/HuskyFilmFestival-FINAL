@@ -15,27 +15,28 @@ export default function FilmToReview({
     <>
       <Container className="filmBlock">
         <div>
-          <h2>Film: {title}</h2>
+          <h2>Film:</h2>
+          <h3>{title}</h3>
         </div>
         <div>
           <span>
             <h2>Director:</h2>
-            <p className="filmInfo">{director}</p>
+            <h3>{director}</h3>
           </span>
           <span>
             <h2>Genre:</h2>
-            <p className="filmInfo">{genre}</p>
+            <h3>{genre}</h3>
           </span>
 
           <span>
             <h2>Screener Website:</h2>
-            <a href={screener} className="filmInfo">
+            <h3><a href={screener} className="filmInfo">
               {screener}
-            </a>
+            </a></h3>
           </span>
           <span>
             <h2>Selection Status:</h2>
-            <p className="statusText">{status}</p>
+            <h3>{status}</h3>
           </span>
         </div>
 

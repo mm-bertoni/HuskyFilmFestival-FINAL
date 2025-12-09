@@ -1,8 +1,9 @@
 .statContainer {
-    background-color: #A4804A;
+    background-color: white;
 }
 
 .statText {
     text-align: center; 
     font-size: xx-large; 
+    color: black;
 }

@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import PropTypes from "prop-types";
+import "../styles/filmForm.css";
 
 export default function ReviewForm({
   director,
@@ -79,15 +80,17 @@ export default function ReviewForm({
   return (
     <Container>
       <Form onSubmit={onSubmit}>
+        <Form.Label className="text-white"> Selection Decision
         <Form.Select value={selected} onChange={handleSelection}>
           <option>Make a decision</option>
           <option value="Selected">Selected</option>
           <option value="Waitlisted">Waitlisted</option>
           <option value="Rejected">Rejected</option>
         </Form.Select>
+        </Form.Label>
         <Button className="submitButton" type="submit">
           {" "}
-          Submit
+          Save Decision
         </Button>
       </Form>
       <Button onClick={handleClick} className="submitButton">

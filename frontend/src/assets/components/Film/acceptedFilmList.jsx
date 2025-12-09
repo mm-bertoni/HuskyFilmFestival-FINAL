@@ -1,8 +1,8 @@
 
 import {useState, useEffect} from "react";
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+/*import Row from 'react-bootstrap/Row';*/
+
 
 import Film from './acceptedFilm';
 
@@ -70,12 +70,12 @@ export default function FilmReviewList(){
     }
     return(
         <Container>
-            <Row>
+            
                 
                     {films.map(renderFilm)}
                
                 
-            </Row>
+            
             
         </Container>
     );

@@ -32,6 +32,10 @@ export default function Navbar() {
         <li>
           <Link to="/tickets" className="navbarLink">Buy Tickets</Link>
         </li>
+
+        <li>
+          <Link to="/filmAdmin" className="navbarLink">Admin Login</Link>
+        </li>
       </ul>
     </nav>
   );
