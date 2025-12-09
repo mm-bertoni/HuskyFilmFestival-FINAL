@@ -79,12 +79,14 @@ export default function ReviewForm({
   return (
     <Container>
       <Form onSubmit={onSubmit}>
+        <Form.Label className="text-white"> Selection Decision
         <Form.Select value={selected} onChange={handleSelection}>
           <option>Make a decision</option>
           <option value="Selected">Selected</option>
           <option value="Waitlisted">Waitlisted</option>
           <option value="Rejected">Rejected</option>
         </Form.Select>
+        </Form.Label>
         <Button className="submitButton" type="submit">
           {" "}
           Submit
