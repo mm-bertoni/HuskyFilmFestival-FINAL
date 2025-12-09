@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 
 export default function FilmToReview({ director, title, genre }) {
   return (
-    <Col>
+    <Col className="mb-3">
    
 
                 <Card  className="acceptedCard mb-3">
