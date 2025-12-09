@@ -14,7 +14,10 @@ export default function FilmToReview({ director, title, genre }) {
                     <Card.Body>
                         <Card.Title
                             style={{color:'white'}}
-                        >{title}</Card.Title>
+                        >Film:</Card.Title>
+                        <Card.Text className="cardText">
+                            Film: {title} 
+                        </Card.Text>
                         <Card.Text className="cardText">
                             Director: {director} 
                         </Card.Text>

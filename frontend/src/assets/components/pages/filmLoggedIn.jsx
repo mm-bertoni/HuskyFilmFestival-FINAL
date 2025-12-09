@@ -37,7 +37,7 @@ export default function FilmLoggedIn() {
               variant="primary"
               style={{ backgroundColor: "#C8102E", borderColor: "#C8102E" }}
             >
-              Ticket Page
+              LOGOUT
             </Button>
           </Link>
         </div>
