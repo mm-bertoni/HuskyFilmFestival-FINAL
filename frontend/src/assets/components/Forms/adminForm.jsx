@@ -46,7 +46,7 @@ export default function AdminForm(){
         }
     }
     
-    const onRegister = async (evt) => {
+    /* const onRegister = async (evt) => {
         evt.preventDefault();
         console.log("Register Attempt: ", login.username);
         if(login.password.trim().length === 0 || login.username.trim().length === 0 ){
@@ -77,7 +77,7 @@ export default function AdminForm(){
             alert("Network error during registration");
         }
         }
-    }
+    } */
 
 
     return(
@@ -102,9 +102,9 @@ export default function AdminForm(){
                         onChange={(e) => setLogin({...login, password: e.target.value})}
                      />
                 </Form.Group>
-                <Button className="submitButton" type="button" onClick={onRegister}>
+                {/* <Button className="submitButton" type="button" onClick={onRegister}>
                     Register
-                </Button>
+                </Button> */}
                 <Button className="submitButton" type="submit">
                     Log In
                 </Button>

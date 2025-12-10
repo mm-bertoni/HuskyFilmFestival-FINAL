@@ -52,7 +52,7 @@ export default function FilmToReview({
           <dd>
             <span
               /*className={`status-badge status-${status.toLowerCase().replace(/\s+/g, "-")}`}*/
-              aria-label={`Current status: ${status}`}
+              aria-label={`Current status: TBD`}
             >
               {status}
             </span>

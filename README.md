@@ -6,7 +6,9 @@ Margaret Bertoni, Utkarsh Dev
 ## Live Website Link:
 [Husky Film Fest Website](https://huskyfilmfestival-final.onrender.com/)
 ## Database Size at Time of Submission:
-[MongoDB]()
+[Mongo DB](frontend/src/assets/images/screenshots/Mongo1.png)
+[Mongo DB](frontend/src/assets/images/screenshots/Mongo2.png)
+[Mongo DB](frontend/src/assets/images/screenshots/Mongo3.png)
 ## Video Link:
 
 ## Slides Link:
@@ -95,6 +97,8 @@ Prerequisites:
    - Create a MongoDB DB and 3 collections (Tickets, filmSubmissions,users ). 
    - Create a .env file and Set MONGO_URI to the appropriate connection (e.g. export MONGO_URI="mongodb://etc")
    - Upload sample film data (data for ![filmSubmissions](data/Sample Film Data.json) linked)
+   - Upload this user and passwordHash to the users database to enable login: 
+   username: HFFadmin1. passwordHash: $2b$10$0wpafc2cyEWee0eUKzrlQeWAOXCcoyajojm2FMHGA18W/83xrWuyK
 
 4. Start the backend server (uses nodemon):
    - npm install
@@ -129,6 +133,10 @@ The app has went through major redesigning in order to make it more usable, read
   
 4. Accessibility
    - All pages, forms and components have now added accessibility, following the WCAG guidelines. The whole website has been made keyboard accessible, HTML semantic tags have been used, aria-labels have been added and alt-text has been added to images. A lighthouse score of 100 in accessibility has been achived for all pages.
+   Here are a few screenshots of the lighthouse tests
+   [Homepage Test](frontend/src/assets/images/screenshots/homepageLighthouse.png)
+   [Film Form Test](frontend/src/assets/images/screenshots/filmFormLighthouse.png)
+   [Ticket Admin Test](frontend/src/assets/images/screenshots/ticketAdminLighthouse.png)
 
 ## AI Usage
 This README was created/edited with assistance from GitHub Copilot (GPT-5 mini). 

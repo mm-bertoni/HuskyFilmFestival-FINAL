@@ -3,7 +3,7 @@ body {
     background-color: rgb(44, 44, 44);
 }
 
-.submitButton, .submitButton.btn:active {
+.submitButton, .submitButton.btn:active, .submitButton.btn:hover {
   background-color: #c8102e;
   border: "2px solid";
   border-color: #c8102e;
