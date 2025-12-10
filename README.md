@@ -10,7 +10,7 @@ Margaret Bertoni, Utkarsh Dev
 [Mongo DB](frontend/src/assets/images/screenshots/Mongo2.png)
 [Mongo DB](frontend/src/assets/images/screenshots/Mongo3.png)
 ## Video Link:
-
+[Video Link](https://www.youtube.com/watch?v=8zbpgKFrI38)
 ## Slides Link:
 [Slides Here](https://docs.google.com/presentation/d/1_0b0qL4LJHwMzMGfqPX6sXSgsvvmwLN16gfeBf3fsZs/edit?usp=sharing)
 ## Design Doc:
