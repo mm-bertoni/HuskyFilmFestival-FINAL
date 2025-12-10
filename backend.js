@@ -23,6 +23,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Trust proxy for render
+app.set('trust proxy', 1);
 // Session configuration 
 app.use(
   session({
@@ -31,8 +33,9 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: false, // HTTPS only in production
+      secure: process.env.NODE_ENV === 'production',
       httpOnly: true,
+      sameSite: 'lax'
       maxAge: 24 * 60 * 60 * 1000, // 24 hours
     },
   })
