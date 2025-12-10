@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Trash2, RefreshCw, AlertCircle, ArrowUpDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import TicketForm from "../Forms/TicketForm";
+import {useAuth} from "../protectedRoute";
+
+
 
 export default function AdminTicketList() {
   const [tickets, setTickets] = useState([]);
@@ -12,17 +14,11 @@ export default function AdminTicketList() {
   const [editingTicket, setEditingTicket] = useState(null);
   const [isReversed, setIsReversed] = useState(false);
   const navigate = useNavigate();
+  const {logout} = useAuth();
+  
 
-  //check authentication
-  useEffect(() => {
-    const isLoggedIn = localStorage.getItem("adminLoggedIn");
-    if (!isLoggedIn) {
-      navigate("/filmAdmin");
-    }
-  }, [navigate]);
-
-  const handleLogout = () => {
-    localStorage.removeItem("adminLoggedIn");
+  const handleLogout = async () => {
+    await logout();
     navigate("/filmAdmin");
   };
 
@@ -98,10 +94,7 @@ export default function AdminTicketList() {
     fetchTickets();
   }, []);
 
-  if (!localStorage.getItem("adminLoggedIn")) {
-    return null;
-  }
-
+ 
   if (loading) {
     return (
       <div
