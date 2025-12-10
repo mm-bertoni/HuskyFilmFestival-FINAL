@@ -14,10 +14,9 @@ Margaret Bertoni, Utkarsh Dev
 ## Slides Link:
 [Slides Here](https://docs.google.com/presentation/d/1_0b0qL4LJHwMzMGfqPX6sXSgsvvmwLN16gfeBf3fsZs/edit?usp=sharing)
 ## Design Doc:
-[Updated from P3](docs/Project 4 Design Doc.pdf)
+Files are in the Docs Folder (updated from p3)
 ## Usability Studies
-[Margaret Study](docs/Usability Study Report- Margaret Bertoni.pdf)
-[Utkarsh Study](docs/Usability Study Report-Utkarsh.pdf)
+Files are in the Docs Folder
 ## Class Link
 [WebDev Class](https://johnguerra.co/classes/webDevelopment_online_fall_2025/)
 
