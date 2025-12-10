@@ -1,7 +1,7 @@
 .filmFormContainer {
     font-size: xx-large;
 }
-.submitButton, .submitButton:focus, .submitButton:active {
+.submitButton,  .submitButton.btn:active {
   background-color: #c8102e;
   border: "2px solid";
   border-color: #c8102e;
