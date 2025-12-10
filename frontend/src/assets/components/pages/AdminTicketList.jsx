@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Trash2, RefreshCw, AlertCircle, ArrowUpDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import {useAuth} from "../protectedRoute";
+import {useAuth} from "../authContext";
 
 
 
