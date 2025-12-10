@@ -47,8 +47,9 @@ passport.use(strategy);
 // Used Claude to help troubleshoot the serializing
 // Anthropic. (2025, Dec 5). *Formatting MongoDB data to match users.js structure* [Generative AI Chat]. Claude Sonnet 4.5 https://claude.ai/share/13751439-461d-40f5-86cd-df89268c170e 
 passport.serializeUser((user, done) => {
-  console.log("Serializing user:", user.id);
-  done(null, user.id);  // Save the string id to session
+ 
+  console.log("Serializing user:",user._idD);
+  done(null, user._id.toString());  // Save the string id to session
 });
 
 passport.deserializeUser(async (id, done) => {

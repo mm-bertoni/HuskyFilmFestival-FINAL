@@ -2,6 +2,7 @@
 // Fixed versions of functions made with Claude:
 // Anthropic. (2025, Dec 5). *Formatting MongoDB data to match users.js structure* [Generative AI Chat]. Claude Sonnet 4.5 https://claude.ai/share/13751439-461d-40f5-86cd-df89268c170e
 import UsersDB from "../server/usersDB.js";
+import { ObjectId } from "mongodb";
 
 export const createUser = async (user) => {
     try {
