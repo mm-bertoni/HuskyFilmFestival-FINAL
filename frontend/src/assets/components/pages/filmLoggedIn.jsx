@@ -52,8 +52,7 @@ export default function FilmLoggedIn() {
             <h1>Review Films</h1>
             <nav aria-label="Admin actions">
               <Button
-                as={Link}
-                to="/adminTickets"
+                onClick={()=> navigate('/adminTickets')}
                 variant="primary"
                 style={{ backgroundColor: "#C8102E", borderColor: "#C8102E" }}
                 className="me-2"
