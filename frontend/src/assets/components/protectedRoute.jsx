@@ -11,28 +11,34 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   const checkAuth = useCallback(async () => {
+    console.log('🔍 checkAuth called');
     try {
       const response = await fetch('/user', {
         credentials: 'include',
       });
 
+      console.log('🔍 checkAuth response status:', response.status);
+
       if (response.ok) {
         const data = await response.json();
+        console.log('✅ checkAuth user data:', data);
         setUser(data.user);
       } else {
+        console.log('❌ checkAuth failed - no user, status:', response.status);
         setUser(null);
       }
     } catch (error) {
-      console.error('Auth check failed:', error);
+      console.error('💥 Auth check failed:', error);
       setUser(null);
     } finally {
       setLoading(false);
     }
-  }, []); // Empty deps since it doesn't depend on any props/state
+  }, []);
 
   useEffect(() => {
+    console.log('🚀 AuthProvider mounted, calling checkAuth');
     checkAuth();
-  }, [checkAuth]); // Now properly depends on checkAuth
+  }, [checkAuth]);
 
   const logout = async () => {
     try {
@@ -56,7 +62,10 @@ export const AuthProvider = ({ children }) => {
 export const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
 
+  console.log('🛡️ ProtectedRoute render - user:', user, 'loading:', loading);
+
   if (loading) {
+    console.log('⏳ ProtectedRoute: still loading...');
     return (
       <div style={{ 
         display: 'flex', 
@@ -70,9 +79,11 @@ export const ProtectedRoute = ({ children }) => {
   }
 
   if (!user) {
+    console.log('🚫 ProtectedRoute: no user, redirecting to /filmAdmin');
     return <Navigate to="/filmAdmin" replace />;
   }
 
+  console.log('✅ ProtectedRoute: user authenticated, rendering children');
   return children;
 };
 
