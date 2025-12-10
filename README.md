@@ -131,7 +131,7 @@ The app has went through major redesigning in order to make it more usable, read
    - Passport.js has been used to implement authentication in the website. This allows us to reference a database of admin users to approve authentication rather than have the credentials coded in. A single login page will allow access to both the film approval page and the ticket admin page.
   
 4. Accessibility
-   - All pages, forms and components have now added accessibility, following the WCAG guidelines. The whole website has been made keyboard accessible, HTML semantic tags have been used, aria-labels have been added and alt-text has been added to images. A lighthouse score of 100 in accessibility has been achived for all pages.
+   - All pages, forms and components have now added accessibility, following the WCAG guidelines. The whole website has been made keyboard accessible, HTML semantic tags have been used, aria-labels have been added and alt-text has been added to images. A lighthouse score of 96 or higher in accessibility has been achived for all pages.
    Here are a few screenshots of the lighthouse tests
    [Homepage Test](frontend/src/assets/images/screenshots/homepageLighthouse.png)
    [Film Form Test](frontend/src/assets/images/screenshots/filmFormLighthouse.png)
